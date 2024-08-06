@@ -1,0 +1,25 @@
+{
+  "title": "O sumiço de Vivian",
+  "id": "world.o-sumico-de-vivian.2024-08-06.1722916632915",
+  "system": "ordemparanormal",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "description": "<h3>Rio de Janeiro - 26/05/1924<br /><br />Escritório da Polícia do Rio de Janeiro.</h3><p>Um caso de desaparecimento de uma jovem escritora inglesa, Vivian Levin, em suas férias em família para o Brasil. A imprensa inglesa categorizou o Brasil como um país perigoso e o governo paralisou as negociações de exportações café com o governo brasileiro.</p><p style=\"text-align:justify\">Um caso de extrema importância nacional na capital brasileira foi designada às forças especiais do estado do Rio de Janeiro.</p><p></p><h3></h3>",
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "version": "0",
+  "size": 11085713,
+  "note": "",
+  "snapshotId": "snapshot.2024-08-06.1722916427486",
+  "originalSize": 19264488,
+  "createdAt": 1722916632915,
+  "packageId": "o-sumico-de-vivian",
+  "type": "world"
+}

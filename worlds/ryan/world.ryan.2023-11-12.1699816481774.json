@@ -1,0 +1,25 @@
+{
+  "title": "RYAN",
+  "id": "world.ryan.2023-11-12.1699816481774",
+  "system": "dnd5e",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "description": "",
+  "version": "0",
+  "size": 731960,
+  "note": "11.4",
+  "snapshotId": null,
+  "originalSize": 1364284,
+  "createdAt": 1699816481774,
+  "packageId": "ryan",
+  "type": "world"
+}

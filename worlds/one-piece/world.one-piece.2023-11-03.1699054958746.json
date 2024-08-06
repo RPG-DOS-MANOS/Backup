@@ -1,0 +1,25 @@
+{
+  "title": "ONE PIECE",
+  "id": "world.one-piece.2023-11-03.1699054958746",
+  "system": "dnd5e",
+  "description": "<img src=\"https://i.pinimg.com/736x/55/3c/0c/553c0ccd4e8605405087878cf79d6297.jpg\" />",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.308"
+  },
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "version": "0",
+  "size": 3724095,
+  "note": "03/11/23",
+  "snapshotId": null,
+  "originalSize": 6192216,
+  "createdAt": 1699054958746,
+  "packageId": "one-piece",
+  "type": "world"
+}

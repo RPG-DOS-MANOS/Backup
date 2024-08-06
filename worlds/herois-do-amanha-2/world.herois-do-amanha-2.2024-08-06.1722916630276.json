@@ -1,0 +1,25 @@
+{
+  "title": "HERÓIS DO AMANHÃ 2",
+  "id": "world.herois-do-amanha-2.2024-08-06.1722916630276",
+  "system": "cyberpunk2020",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.315"
+  },
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "description": "",
+  "version": "0",
+  "size": 38510410,
+  "note": "",
+  "snapshotId": "snapshot.2024-08-06.1722916427486",
+  "originalSize": 44266913,
+  "createdAt": 1722916630276,
+  "packageId": "herois-do-amanha-2",
+  "type": "world"
+}

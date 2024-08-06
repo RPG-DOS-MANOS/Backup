@@ -1,0 +1,25 @@
+{
+  "title": "Minas de Phandelver",
+  "id": "world.minas-de-phandelver.2024-08-06.1722916632180",
+  "system": "dnd5e",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "description": "",
+  "version": "0",
+  "size": 2217865,
+  "note": "",
+  "snapshotId": "snapshot.2024-08-06.1722916427486",
+  "originalSize": 3272216,
+  "createdAt": 1722916632180,
+  "packageId": "minas-de-phandelver",
+  "type": "world"
+}

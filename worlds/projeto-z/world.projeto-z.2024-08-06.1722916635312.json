@@ -1,0 +1,25 @@
+{
+  "title": "ONE PIECE: PROJETO Z",
+  "id": "world.projeto-z.2024-08-06.1722916635312",
+  "system": "dnd5e",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.315"
+  },
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "description": "",
+  "version": "0",
+  "size": 4324509,
+  "note": "",
+  "snapshotId": "snapshot.2024-08-06.1722916427486",
+  "originalSize": 6926525,
+  "createdAt": 1722916635312,
+  "packageId": "projeto-z",
+  "type": "world"
+}

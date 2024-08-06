@@ -1,0 +1,25 @@
+{
+  "title": "PIT",
+  "id": "world.pit.2024-08-06.1722916635015",
+  "system": "ordemparanormal",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11.315"
+  },
+  "relationships": {
+    "requires": [],
+    "systems": [],
+    "recommends": [],
+    "conflicts": [],
+    "flags": {}
+  },
+  "description": "",
+  "version": "0",
+  "size": 118140,
+  "note": "",
+  "snapshotId": "snapshot.2024-08-06.1722916427486",
+  "originalSize": 159748,
+  "createdAt": 1722916635015,
+  "packageId": "pit",
+  "type": "world"
+}
