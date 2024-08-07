@@ -1,0 +1,61 @@
+{{#if ruleEditing}}
+    <section class="rule-editing">
+        <div class="editor-placeholder"></div>
+        <div class="item-controls">
+            <button type="button" data-action="close">{{localize "PF2E.Item.Rules.Close"}}</button>
+            <button type="button" data-action="apply">{{localize "PF2E.Item.Rules.Apply"}}</button>
+        </div>
+    </section>
+{{else}}
+    <div class="rules">
+        <div class="nerd-details">
+            <div class="form-group">
+                <label for="{{options.id}}-uuid">
+                    <span>{{localize "PF2E.UUID.Label"}}</span>
+                    <i class="fa-solid fa-info-circle" data-tooltip="PF2E.Item.Rules.Hint.UUID"></i>
+                </label>
+                <input id="{{options.id}}-uuid" disabled value="{{item.uuid}}" />
+                <div class="item-controls">
+                    <a data-clipboard="{{item.uuid}}"><i class="fa-solid fa-fw fa-clipboard"></i></a>
+                </div>
+            </div>
+            {{#if item.sourceId}}
+                <div class="form-group">
+                    <label for="{{options.id}}-source-id">
+                        <span>{{localize "PF2E.UUID.SourceId"}}</span>
+                        <i class="fa-solid fa-info-circle" data-tooltip="PF2E.Item.Rules.Hint.SourceId"></i>
+                    </label>
+                    <input id="{{options.id}}-source-id" disabled value="{{item.sourceId}}" />
+                    <div class="item-controls">
+                        <a data-clipboard="{{item.sourceId}}"><i class="fa-solid fa-fw fa-clipboard"></i></a>
+                    </div>
+                </div>
+            {{/if}}
+            <div class="form-group">
+                <label for="{{options.id}}-slug">
+                    <span>{{localize "PF2E.Slug"}}</span>
+                    <i class="fa-solid fa-info-circle" data-tooltip="PF2E.Item.Rules.Hint.Slug"></i>
+                </label>
+                <input id="{{options.id}}-slug" type="text" name="system.slug" value="{{item.system.slug}}" />
+                <div class="item-controls">
+                    <a data-action="regenerate-slug" data-tooltip="PF2E.Item.Rules.RegenerateSlug"><i class="fa-solid fa-fw fa-sync-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="rule-element-forms">
+            {{#each rules.elements as |form|}}
+                {{{form.template}}}
+            {{/each}}
+        </div>
+        <div class="create-rule-element">
+            <select data-action="select-rule-element">
+                {{#select rules.selection.selected}}
+                    {{#each rules.selection.types as |value key|}}
+                        <option value="{{key}}">{{value}}</option>
+                    {{/each}}
+                {{/select}}
+            </select>
+            <a data-action="add-rule-element"><i class="fa-solid fa-plus"></i> {{localize "PF2E.Item.Rules.New"}}</a>
+        </div>
+    </div>
+{{/if}}

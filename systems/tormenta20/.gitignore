@@ -1,0 +1,15 @@
+# IDE
+.idea/
+.vs/
+
+# Node Modules
+node_modules/
+foundry/
+npm-debug.log
+.DS_Store
+
+# Backup Files
+*.bak
+
+# Local Files
+*.lock
