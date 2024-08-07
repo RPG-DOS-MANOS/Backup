@@ -1,0 +1,49 @@
+#journalShow {
+  border: solid black thin;
+}
+
+#journalShow .compact-journal-entry {
+  width: inherit;
+  max-width: inherit;
+  min-width: inherit;
+  height: inherit;
+  max-height: inherit;
+  min-height: inherit;
+}
+
+#journalShow .compact-journal-entry .editor::-webkit-scrollbar-corner {
+  background: rgba(0, 0, 0, 0);
+}
+
+#journalShow > form.flexcol {
+  width: 100%;
+  height: 100%;
+}
+
+#journalShow > form.flexcol .lightbox-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#journalShow > form > input[name="name"],
+#journalShow > form > select[name="folder"] {
+  display: none;
+}
+
+body.stream > .monks-enhanced-journal.flexrow {
+  display: none !important;
+}
+
+#journalShow .monks-journal-sheet.sheet .tab[data-tab] {
+  display: none;
+  width: unset;
+}
+
+#journalShow .monks-journal-sheet.sheet .tab[data-tab].active {
+  display: block;
+}
+
+#journalShow .monks-journal-sheet.sheet .owner-only {
+  display: none;
+}

@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap");
+
+/*
+@section body fix
+*/
+
+body.stream {
+  display: flex;
+}
+
+body.stream > .tab[data-tab] {
+  position: relative !important;
+  margin: 20px 50px 20px 20px;
+  top: 0 !important;
+}
+
+body.stream > section#chat {
+  left: 0;
+}
+
+body.stream > section#combat {
+  display: none;
+}
+
+body.stream .editor-edit {
+  display: none !important;
+}
+
+.streamUtils {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.streamUtils section,
+body.stream .streamUtils .tab[data-tab] {
+  position: relative;
+  margin: 20px 40px 20px 20px;
+  height: fit-content;
+}
+
+/*
+@section ingame part
+*/
+
+#streamutils-chooser .bottomButtons {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(/ui/parchment.jpg);
+  padding: 8px;
+}
+
+#streamutils-chooser table {
+  width: 100%;
+}
+
+#streamutils-chooser .tableDiv {
+  overflow-y: auto;
+  max-height: 60vh;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#streamutils-chooser td {
+  white-space: nowrap;
+  display: flex;
+}
+
+#streamutils-chooser label {
+  align-self: center;
+}
+
+#custom-editor .editor {
+  width: 100%;
+  height: calc(50% - (39px + 45px) / 2);
+}
+
+#custom-editor .custom-editor-border {
+  clear: both;
+  width: 100%;
+  height: calc(100% - 32px);
+}
+
+#custom-editor .buttonDiv {
+  width: 100%;
+  display: inline-flex;
+}
+
+#custom-editor.app.window-app.sheet {
+  min-width: 602px;
+}
+
+#custom-editor button.save-button {
+  margin-right: unset;
+}
+
+#custom-editor button.help-button {
+  max-width: min-content;
+  margin-left: unset;
+}
+
+#custom-editor .custom-editor-border h2:last-of-type {
+  margin-top: 8px;
+}
