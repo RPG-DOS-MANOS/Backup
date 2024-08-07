@@ -1,0 +1,66 @@
+{
+  "id": "dnd5e_pt-BR",
+  "name": "dnd5e_pt-BR",
+  "title": "DnD5e Brazilian Portuguese Translation",
+  "description": "<p>Adiciona o idioma Português (Brasil) para o sistema de jogo D&D 5E.</p><p>Obs. Esse módulo traduz somente os termos relacionados ao sistema de D&D 5E. Esse módulo não traduz outras partes do FoundryVTT, como a interface principal.</p>",
+  "version": "2.2.0",
+  "minimumCoreVersion": "9",
+  "compatibility": {
+    "minimum": "9",
+    "verified": "10"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "manifest": "https://raw.githubusercontent.com/foundryvtt/dnd5e/master/system.json",
+        "compatibility": {
+          "minimum": "2.1.0",
+          "verified": "2.1.5"
+        }
+      }
+    ],
+    "requires": [
+      {
+        "id": "babele",
+        "type": "module",
+        "manifest": "https://gitlab.com/riccisi/foundryvtt-babele/raw/master/module/module.json",
+        "compatibility": {
+          "minimum": "2.3.3"
+        }
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "Melithian539"
+    },
+    {
+      "name": "Bellenus"
+    },
+    {
+      "name": "Innocenti"
+    },
+    {
+      "name": "Erebo"
+    },
+    {
+      "name": "Rafael Levi"
+    }
+  ],
+  "esmodules": [
+    "main.js",
+    "src/converters.js"
+  ],
+  "languages": [
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "lang/pt-BR/system.json"
+    }
+  ],
+  "url": "https://gitlab.com/fvtt-brasil/dnd5e",
+  "manifest": "https://gitlab.com/fvtt-brasil/dnd5e/-/raw/master/dnd5e_pt-BR/module.json",
+  "download": "https://gitlab.com/fvtt-brasil/dnd5e/-/releases/v2.2.0/downloads/module.zip"
+}

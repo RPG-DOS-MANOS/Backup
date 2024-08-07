@@ -1,0 +1,43 @@
+{
+  "id": "FollowMe",
+  "title": "Follow Me!",
+  "description": "Allows tokens to follow other tokens.",
+  "version": "10.0.2",
+  "authors": [
+    {
+      "name": "o_Ove",
+      "discord": "Ove#4315",
+      "flags": {}
+    },
+    {
+      "name": "Brunhine",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "script/followme.mjs"
+  ],
+  "url": "https://github.com/oOve/followme",
+  "download": "https://github.com/oOve/followme/archive/10.0.2.zip",
+  "manifest": "https://github.com/oOve/followme/releases/latest/download/module.json",
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "de",
+      "name": "deutsch",
+      "path": "lang/de.json",
+      "flags": {}
+    }
+  ],
+  "license": "LICENSE",
+  "readme": "README.md",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  }
+}

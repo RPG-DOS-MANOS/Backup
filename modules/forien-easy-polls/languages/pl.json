@@ -1,0 +1,107 @@
+{
+  "Forien": {
+    "EasyPolls": {
+      "CreateAndSave": "Zapisz i stwórz",
+      "AnswerSent":  "Answer sent!",
+      "CountAnswered": "Łącznie odpowiedzi",
+      "ToggleResults": "Przełącz wyniki",
+
+      "ToggleSettingResults": {
+        "Enable": "Pokaż wyniki",
+        "Disable": "Ukryj wyniki"
+      },
+
+      "ToggleSettingSecret": {
+        "Enable": "Zrób tajną",
+        "Disable": "Zrób publiczną"
+      },
+
+      "Notifications":{
+        "NoGM": "Nie ma żadnego MG online. Obecność MG jest wymagana, aby móc zagłosować."
+      },
+
+      "PollDialog": {
+        "Title": "Stwórz swoją ankietę!",
+        "AddOption": "Dodaj opcję",
+        "Option": "Opcja"
+      },
+
+      "SavedPollsApp": {
+        "Title": "Zapisane ankiety",
+        "OrderingNumber": "lp.",
+        "PollQuestion": "Pytanie",
+        "CreateNew": "Stwórz nową ankietę",
+        "Controls": "Zarządzanie",
+
+        "Tooltips": {
+          "PollMode": "Tryb ankiety (wielokrotnego, pojedynczego wyboru)",
+          "PollResults": "Czy gracze widzą wyniki",
+          "PollSecret": "Czy gracze widzą kto głosował",
+          "Multiple": "Wielokrotnego wyboru",
+          "Single": "Pojedynczego wyboru",
+          "Results": "Gracze mogą zobaczyć wyniki",
+          "NoResults": "Gracze nie mogą zobaczyć wyników",
+          "Secret": "Ankieta jest tajna",
+          "Public": "Ankieta jest publiczna",
+          "Post": "Wyślij ankietę na czat",
+          "Edit": "Edytuj ankietę przed wysłaniem",
+          "Delete": "Usuń ankietę"
+        }
+      },
+
+      "Settings": {
+        "PlayersCreate": {
+          "Enable": "Zezwól graczom na tworzenie ankiet",
+          "EnableHint": "Kiedy ta opcja jest zaznaczona, gracze mogą tworzyć swoje własne ankiety"
+        },
+        "DefaultMode": {
+          "Enable": "Domyślny tryb",
+          "EnableHint": "Wybierz który tryb ankiety jest domyślnie stosowany w nowych ankietach. Ustawienie można nadpisać przykładowo używają flagi --mode",
+          "Multiple": "Wielokrotnego wyboru",
+          "Single": "Pojedynczego wyboru"
+        },
+        "DefaultDisplay": {
+          "Enable": "Zezwól na oglądanie wyników",
+          "EnableHint": "Kiedy ta opcja jest zaznaczona, nowo utworzone ankiety będą pozwalać graczom na wyświetlenie wyników ankiety. Ustawienie można nadpisać przykładowo używają flagi --results"
+        },
+        "DefaultSecret": {
+          "Enable": "Tajne głosowania",
+          "EnableHint": "Kiedy ta opcja jest zaznaczona, gracze nie będą widzieć kto głosował na jaką opcję. Zauważ, że jeśli gracze nie mogą zobaczyć wyników, również nie dowiedzą się kto na co głosował. stawienie można nadpisać przykładowo używają flagi --secret"
+        },
+
+        "Keybindings": {
+          "OpenPollDialog": {
+            "Name": "Otwórz Tworzenie Ankiety",
+            "Hint": "Otwiera okno dialogowe, w którym można w wizualny sposób stworzyć ankietę z wykorzystaniem formularza"
+          },
+          "OpenSavedPollsDialog": {
+            "Name": "Otwórz Zapisane Ankiety",
+            "Hint": "Otwiera okno aplikacji, w którym można przejrzeć swoje zapisane ankiety i je szybko opublikować, usunąć lub edytować"
+          }
+        }
+      },
+
+      "ChatCommander": {
+        "CommandDescription": "Stwórz ankietę. Pierwsza linia będzie pytaniem, a pozostałe linie zostaną odpowiedziami. Użyj {keybind} aby przejść do nowej linii.",
+
+        "SimpleYesNo": "Sugerowane: <strong>Szybka ankieta Tak/Nie</strong>",
+        "QuickPCPoll": "Sugerowane: <strong>Głosowanie na Postaci online</strong>",
+
+        "ParameterMode": "Parametr: <strong>Tryb</strong> - tryb ankiety",
+        "ParameterResults": "Parametr: <strong>Wyniki</strong> - czy gracze mogą widzieć?",
+        "ParameterSecret": "Parametr: <strong>Tajność</strong> - czy gracze wiedzą kto głosował na jaką opcję?",
+
+        "ModeSingle": "Tryb: <strong>pojedynczego wyboru</strong>",
+        "ModeMultiple": "Tryb: <strong>wielokrotnego wyboru</strong>",
+
+        "ResultsTrue": "Wyniki <strong>tak</strong> - gracze mogą zobaczyć wyniki ankiety",
+        "ResultsFalse": "Wyniki <strong>nie</strong> - tylko MG widzi wyniki",
+
+        "SecretTrue": "Tajność: <strong>tak</strong> - gracze nie zobaczą kto głosował",
+        "SecretFalse": "Tajność: <strong>nie</strong> - gracze zobaczą kto głosował",
+
+        "DialogHint": "Możesz również użyć {quickPollKey} aby otworzyć menu tworzenia ankiet; lub {savedPollsKey} aby otworzyć listę twoich zapisanych ankiet"
+      }
+    }
+  }
+}
