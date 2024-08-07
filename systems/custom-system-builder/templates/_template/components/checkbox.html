@@ -1,0 +1,31 @@
+{{! Copyright 2024 Jean-Baptiste Louvet-Daniel
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v\. 2\.0\. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla\.org/MPL/2\.0/\. }}
+
+<div class="custom-system-form-field">
+    <label for="checkboxLabel">Label</label>
+    <input id="checkboxLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="checkboxSize">Size*</label>
+    <select id="checkboxSize" data-key="size">
+        {{#select size}}
+        <option value="full-size">Auto</option>
+        <option value="x-small">Tiny</option>
+        <option value="small">Smaller</option>
+        <option value="m-small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="m-large">Large</option>
+        <option value="large">Larger</option>
+        <option value="x-large">Gigantic</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="checkboxDefaultChecked">Checked by default</label>
+    <input id="checkboxDefaultChecked" type="checkbox" data-key="defaultChecked" {{checked defaultChecked}} />
+</div>

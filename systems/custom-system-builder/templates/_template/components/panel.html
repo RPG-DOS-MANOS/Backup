@@ -1,0 +1,99 @@
+{{! Copyright 2024 Jean-Baptiste Louvet-Daniel
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v\. 2\.0\. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla\.org/MPL/2\.0/\. }}
+
+<div class="custom-system-form-field">
+    <label for="panelFlow">Panel layout*</label>
+    <select id="panelFlow" data-key="flow">
+        {{#select flow}}
+        <option value="vertical">Vertical</option>
+        <option value="horizontal">Horizontal</option>
+        <option value="grid-2">Grid of 2 columns</option>
+        <option value="grid-3">Grid of 3 columns</option>
+        <option value="grid-4">Grid of 4 columns</option>
+        <option value="grid-5">Grid of 5 columns</option>
+        <option value="grid-6">Grid of 6 columns</option>
+        <option value="grid-7">Grid of 7 columns</option>
+        <option value="grid-8">Grid of 8 columns</option>
+        <option value="grid-9">Grid of 9 columns</option>
+        <option value="grid-10">Grid of 10 columns</option>
+        <option value="grid-11">Grid of 11 columns</option>
+        <option value="grid-12">Grid of 12 columns</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="panelAlign">Panel alignment*</label>
+    <select id="panelAlign" data-key="align">
+        {{#select align}}
+        <option value="center">Center</option>
+        <option value="left">Left</option>
+        <option value="right">Right</option>
+        <option value="justify">Justify</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label>Is Panel collapsible?</label>
+    <span>
+        <label for="panelCollapsibleYes">Yes</label>
+        <input
+                type="radio"
+                id="panelCollapsibleYes"
+                name="panelCollapsible"
+                {{checked collapsible}}
+        />
+    </span>
+    <span>
+        <label for="panelCollapsibleNo">No</label>
+        <input
+                type="radio"
+                id="panelCollapsibleNo"
+                name="panelCollapsible"
+                {{checked notCollapsible}}
+        />
+    </span>
+</div>
+
+<div class="custom-system-form-field" id="collapsiblePanelOptions">
+    <div class="custom-system-form-field">
+        <label>Is Panel collapsed by default</label>
+        <span>
+            <label for="panelDefaultCollapsed">Yes</label>
+            <input
+                    type="radio"
+                    id="panelDefaultCollapsed"
+                    name="panelDefaultCollapsed"
+                    {{checked defaultCollapsed}}
+            />
+        </span>
+        <span>
+            <label for="panelDefaultExpanded">No</label>
+            <input
+                    type="radio"
+                    id="panelDefaultExpanded"
+                    name="panelDefaultCollapsed"
+                    {{checked defaultExpanded}}
+            />
+        </span>
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="panelTitle">Panel title</label>
+        <input id="panelTitle" type="text" data-key="title" value="{{title}}" />
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="panelTitleStyle">Panel title style*</label>
+        <select id="panelTitleStyle" data-key="align">
+            {{#select titleStyle}}
+            <option value="default">Default</option>
+            <option value="title">Title</option>
+            {{/select}}
+        </select>
+    </div>
+</div>

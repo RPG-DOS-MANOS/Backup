@@ -1,0 +1,26 @@
+{{! Copyright 2024 Jean-Baptiste Louvet-Daniel
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v\. 2\.0\. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla\.org/MPL/2\.0/\. }}
+
+<div class="custom-system-form-field">
+    <label for="textAreaLabel">Label</label>
+    <input id="textAreaLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textAreaStyle">Style*</label>
+    <select id="textAreaStyle" data-key="style">
+        {{#select style}}
+        <option value="sheet">In sheet editor</option>
+        <option value="dialog">Dialog editor</option>
+        <option value="icon">Icon only</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="textAreaValue">Default value</label>
+    <textarea id="textAreaValue" data-key="defaultValue">{{defaultValue}}</textarea>
+</div>

@@ -1,0 +1,146 @@
+{{! Copyright 2024 Jean-Baptiste Louvet-Daniel
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v\. 2\.0\. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla\.org/MPL/2\.0/\. }}
+
+<div class="custom-system-form-field">
+    <label for="selectLabel">Label</label>
+    <input id="selectLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label>Dropdown options origin*</label>
+    <div class="custom-system-form-field">
+        <div>
+            <label for="customOptions">Custom</label>
+            <input
+                    type="radio"
+                    id="customOptions"
+                    name="dropdownOptionMode"
+                    {{checked customOptions}}
+            />
+        </div>
+        <div>
+            <label for="dynamicTableOptions">Dynamic Table</label>
+            <input
+                    type="radio"
+                    id="dynamicTableOptions"
+                    name="dropdownOptionMode"
+                    {{checked dynamicTableOptions}}
+            />
+        </div>
+        <div>
+            <label for="formulaOptions">Formula</label>
+            <input
+                    type="radio"
+                    id="formulaOptions"
+                    name="dropdownOptionMode"
+                    {{checked formulaOptions}}
+            />
+        </div>
+    </div>
+</div>
+
+<div class="custom-system-custom-options" style="{{#unless customOptions}}display:none{{/unless}}">
+    <div class="custom-system-form-field">
+        <label>Options</label>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key*</th>
+                    <th>Label</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each options}}
+                <tr class="custom-system-dropdown-option">
+                    <td><input type="text" class="custom-system-dropdown-option-key" value="{{this.key}}" /></td>
+                    <td><input type="text" class="custom-system-dropdown-option-value" value="{{this.value}}" /></td>
+                    <td>
+                        <a class="custom-system-delete-option"
+                            ><i class="fas fa-trash"></i
+                        ></a>
+                    </td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td colspan="2"></td>
+                    <td>
+                        <a id="addOption">
+                            <i class="fas fa-plus-circle"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="custom-system-dynamic-options" style="{{#unless dynamicTableOptions}}display:none{{/unless}}">
+    <div class="custom-system-form-field">
+        <label for="selectDynamicTableKey">Dynamic table key*</label>
+        <input id="selectDynamicTableKey" type="text" data-key="tableKey" value="{{tableKey}}" />
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="selectDynamicTableKeyColumn">Column from the dynamic table to use as option key*</label>
+        <input id="selectDynamicTableKeyColumn" type="text" data-key="tableKeyColumn" value="{{tableKeyColumn}}" />
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="selectDynamicTableLabelColumn">
+            Column from the dynamic table to use as option label
+        </label>
+        <input
+            id="selectDynamicTableLabelColumn"
+            type="text"
+            data-key="tableLabelColumn"
+            value="{{tableLabelColumn}}"
+        />
+    </div>
+</div>
+
+<div class="custom-system-formula-options" style="{{#unless formulaOptions}}display:none{{/unless}}">
+    <div class="custom-system-form-field">
+        <label for="formulaKeyOptions">
+            Formula for Key-Options*
+            <i class="fas fa-info-circle"
+               title="Expected value type: Array/Matrix (or String with comma-separated values)"></i>
+        </label>
+        <textarea id="formulaKeyOptions" data-key="formulaKeyOptions">{{formulaKeyOptions}}</textarea>
+    </div>
+
+    <div class="custom-system-form-field">
+        <label for="formulaLabelOptions">Formula for Label-Options
+            <i class="fas fa-info-circle"
+               title="Expected value type: Array/Matrix (or String with comma-separated values). If not set, will use the key-options instead"></i>
+        </label>
+        <textarea id="formulaLabelOptions" data-key="formulaLabelOptions">{{formulaLabelOptions}}</textarea>
+    </div>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="selectDefaultValue">Default value
+        <i class="fas fa-info-circle"
+           title="This will be the selected key upon creation. Without one, an empty option will automatically be added to your dropdown field"></i>
+    </label>
+    <input id="selectDefaultValue" type="text" data-key="defaultValue" value="{{defaultValue}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="selectSize">Size*</label>
+    <select id="selectSize" data-key="size">
+        {{#select size}}
+        <option value="full-size">Auto</option>
+        <option value="x-small">Tiny</option>
+        <option value="small">Smaller</option>
+        <option value="m-small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="m-large">Large</option>
+        <option value="large">Larger</option>
+        <option value="x-large">Gigantic</option>
+        {{/select}}
+    </select>
+</div>

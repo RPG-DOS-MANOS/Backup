@@ -1,0 +1,63 @@
+{{! Copyright 2024 Jean-Baptiste Louvet-Daniel
+   - 
+   - This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v\. 2\.0\. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at https://mozilla\.org/MPL/2\.0/\. }}
+
+<div class="custom-system-form-field">
+    <label for="meterLabel">Label</label>
+    <input id="meterLabel" type="text" data-key="label" value="{{label}}" />
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterSize">Size*</label>
+    <select id="meterSize" data-key="size">
+        {{#select size}}
+        <option value="full-size">Auto</option>
+        <option value="x-small">Tiny</option>
+        <option value="small">Smaller</option>
+        <option value="m-small">Small</option>
+        <option value="medium">Medium</option>
+        <option value="m-large">Large</option>
+        <option value="large">Larger</option>
+        <option value="x-large">Gigantic</option>
+        {{/select}}
+    </select>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterValue">Value*</label>
+    <textarea id="meterValue" data-key="value">{{value}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterMin">Min</label>
+    <textarea id="meterMin" data-key="min">{{min}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterMax">Max</label>
+    <textarea id="meterMax" data-key="max">{{max}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterLow">Low</label>
+    <textarea id="meterLow" data-key="low">{{low}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterHigh">High</label>
+    <textarea id="meterHigh" data-key="high">{{high}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterOptimum">Optimum</label>
+    <textarea id="meterOptimum" data-key="optimum">{{optimum}}</textarea>
+</div>
+
+<div class="custom-system-form-field">
+    <label for="meterTextOption">Text display</label>
+    <select id="meterTextOption" data-key="size">
+        {{selectOptions METER_TEXT_OPTIONS selected=textOption localize=true}}
+    </select>
+</div>

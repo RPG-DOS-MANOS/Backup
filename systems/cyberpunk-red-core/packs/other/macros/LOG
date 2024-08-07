@@ -1,0 +1,15 @@
+2023/12/16-17:31:35.864 32c0 Recovering log #3
+2023/12/16-17:31:35.864 32c0 Level-0 table #5: started
+2023/12/16-17:31:35.873 32c0 Level-0 table #5: 1995 bytes OK
+2023/12/16-17:31:35.884 32c0 Delete type=0 #3
+2023/12/16-17:31:35.885 32c0 Delete type=3 #2
+2023/12/16-17:33:50.461 6d08 Level-0 table #8: started
+2023/12/16-17:33:50.461 6d08 Level-0 table #8: 0 bytes OK
+2023/12/16-17:33:50.468 6d08 Delete type=0 #6
+2023/12/16-17:33:50.504 6d08 Manual compaction at level-0 from '!macros!QpLSSjVgEtSJFGAe' @ 72057594037927935 : 1 .. '!macros!QpLSSjVgEtSJFGAe' @ 0 : 0; will stop at '!macros!QpLSSjVgEtSJFGAe' @ 1 : 1
+2023/12/16-17:33:50.504 6d08 Compacting 1@0 + 0@1 files
+2023/12/16-17:33:50.514 6d08 Generated table #9@0: 1 keys, 1995 bytes
+2023/12/16-17:33:50.517 6d08 Compacted 1@0 + 0@1 files => 1995 bytes
+2023/12/16-17:33:50.524 6d08 compacted to: files[ 0 1 0 0 0 0 0 ]
+2023/12/16-17:33:50.524 6d08 Delete type=2 #5
+2023/12/16-17:33:50.540 6d08 Manual compaction at level-0 from '!macros!QpLSSjVgEtSJFGAe' @ 1 : 1 .. '!macros!QpLSSjVgEtSJFGAe' @ 0 : 0; will stop at (end)
