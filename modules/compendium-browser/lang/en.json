@@ -1,0 +1,82 @@
+{
+	"CMPBrowser": {
+		"compendiumBrowser": "Compendium Browser",
+		"sortBy": "Sort by",
+		"generalSettings": "General Settings",
+		"allowSpellAcc": "Allow Players Access to the spell browser",
+		"allowFeatAcc": "Allow Players Access to the feat browser",
+		"allowItemAcc": "Allow Players Access to the item browser",
+		"allowNpcAcc": "Allow Players Access to the npc browser",
+		"compSettingsSpell": "Item Compendium Settings",
+		"compSettingsNpc": "NPC Compendium Settings",
+		"load": "Load",
+		"castingTime": "Casting Time",
+		"spellType": "Spell Type",
+		"damageType": "Damage Type",
+		"UsesResources": "Uses Resources",
+		"GameMechanics": "Game Mechanics",
+		"ItemSubtype": "Item Subtype",
+		"MagicItems": "Magic Items",
+		"ItemsPacks": "Packs",
+		"ItemsPacksBurglar": "Burglar's Pack",
+		"ItemsPacksDiplomat": "Diplomat's Pack",
+		"ItemsPacksDungeoneer": "Dungeoneer's Pack",
+		"ItemsPacksEntertainer": "Entertainer's Pack",
+		"ItemsPacksExplorer": "Explorer's Pack",
+		"ItemsPacksMonsterHunter": "Monster Hunter's Pack",
+		"ItemsPacksPriest": "Priest's Pack",
+		"ItemsPacksScholar": "Scholar's Pack",
+		"general": "General",
+		"overall": "Overall Type",
+		"subfeature": "Subfeature Type",
+		"hasSpells": "Has Spells",
+		"hasLegAct": "Has Legendary Actions",
+		"hasLegRes": "Has Legendary Resistance",
+		"dmgInteraction": "Damage Interaction",
+		"dmgDealt": "Damage Dealt",
+		"Tab": {
+			"SpellBrowser": "Spells",
+			"FeatBrowser": "Features",
+			"ItemBrowser": "Items",
+			"NPCBrowser": "Actors",
+			"Settings": "Settings"
+		},
+		"SETTING": {
+			"Maxload.NAME": "Maximum load",
+			"Maxload.HINT": "Maximum number of spells, feats, items, or NPCs to display; to see more use the filters. This setting is to allow manageing memory and server load.",
+			"extraButtonsGlobal.NAME": "Globally Enable Buttons",
+			"extraButtonsGlobal.HINT": "Globally enable shortcut buttons to the browser that are added to sheets (Must re-open window for it to apply)",
+			"extraSheetButtons.NAME": "Enable Extra Sheet Buttons",
+			"extraSheetButtons.HINT": "Enable extra shortcut buttons that appear on PC sheets (Must re-open window for it to apply)",
+			"extraAdvancementButtons.NAME": "Enable Extra Advancement Buttons",
+			"extraAdvancementButtons.HINT": "Enable extra shortcut buttons that appear on advancement windows (Must re-open window for it to apply)",
+			"bannersGlobal.NAME": "Enable Banners - Global",
+			"bannersGlobal.HINT": "Enable Banners for missing key features on PC sheets for all players",
+			"bannersLocal.NAME": "Enable Banners - Local",
+			"bannersLocal.HINT": "Enable Banners for missing key features on PC sheets for self"
+		},
+		"LOADING": {
+			"Message": "Loading..."
+		},
+		"LOADED": {
+			"Message": {
+				"feat": "Loaded {numLoaded} feats",
+				"item": "Loaded {numLoaded} items",
+				"npc": "Loaded {numLoaded} npcs",
+				"spell": "Loaded {numLoaded} spells"
+			},
+			"MaxLoaded": "(maximum displayed; to see more, use the filters)"
+		},
+		"ToolTip": {
+			"Feats": "Find Feats",
+			"Spells": "Find Spells",
+			"Features": "Find Features"
+		},
+		"FindA": {
+			"race": "Missing a Race, click to open list",
+			"background": "Missing a Background, click to open list",
+			"class": "Missing a Class, click to open list"
+		},
+		"Filters.ResetFilters": "Reset Filters"
+	}
+}

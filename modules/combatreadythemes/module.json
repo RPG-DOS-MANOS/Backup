@@ -1,0 +1,68 @@
+{
+	"id": "combatreadythemes",
+	"title": "Combat Ready! Themes Pack",
+	"description": "A pack of basic themes for the Combat Ready! module",
+	"version": "1.3.0",
+	"authors": [
+		{
+			"name": "Teshynil",
+			"url": "https://github.com/Teshynil/",
+			"email": "",
+			"discord": "Teshynil#8564",
+			"ko-fi": "",
+			"patreon": "",
+			"reddit": "u/Teshynil",
+			"twitter": "@Teshynil"
+		}
+	],
+	"manifestPlusVersion": "1.2.0",
+	"socket": true,
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"esmodules": [
+		"combatreadythemes.js"
+	],
+	"styles": [
+		"themes/light-meter/light-meter.css",
+		"themes/video-animation/video-animation.css"
+	],
+	"relationships": {
+		"systems": [],
+		"requires": [
+			{
+				"id": "combatready",
+				"type": "module",
+				"manifest": "https://raw.githubusercontent.com/Teshynil/combatready/master/src/module.json",
+				"compatibility": {
+					"verified": "4.2.0"
+				}
+			}
+		]
+	},
+	"packs": [],
+	"compatibility": {
+		"minimum": 9,
+		"verified": 10
+	},
+	"url": "https://github.com/Teshynil/combatreadythemes",
+	"download": "https://github.com/Teshynil/combatreadythemes/releases/download/1.3.0/combatreadythemes-v1.3.0.zip",
+	"manifest": "https://raw.githubusercontent.com/Teshynil/combatreadythemes/master/src/module.json",
+	"license": "https://github.com/Teshynil/combatreadythemes/blob/1.3.0/LICENSE",
+	"readme": "https://github.com/Teshynil/combatreadythemes/blob/1.3.0/README.md",
+	"changelog": "https://github.com/Teshynil/combatreadythemes/blob/1.3.0/CHANGELOG.md",
+	"name": "combatreadythemes",
+	"minimumCoreVersion": "9",
+	"compatibleCoreVersion": "10",
+	"author": "Teshynil",
+	"dependencies": [
+		{
+			"name": "combatready",
+			"manifest": "https://raw.githubusercontent.com/Teshynil/combatready/master/src/module.json"
+		}
+	]
+}

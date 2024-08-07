@@ -1,0 +1,6 @@
+2024/05/24-16:24:31.612 3390 Delete type=3 #10
+2024/05/24-17:38:19.432 3960 Level-0 table #110: started
+2024/05/24-17:38:19.432 3960 Level-0 table #110: 0 bytes OK
+2024/05/24-17:38:19.435 3960 Delete type=0 #108
+2024/05/24-17:38:19.435 3960 Manual compaction at level-0 from '!tables!2tuVrRiWatRRiuJL' @ 72057594037927935 : 1 .. '!tables.results!zIOBrxDOh7fCz2u2.zxoApcg7EnEDMhzC' @ 0 : 0; will stop at (end)
+2024/05/24-17:38:19.435 3960 Manual compaction at level-1 from '!tables!2tuVrRiWatRRiuJL' @ 72057594037927935 : 1 .. '!tables.results!zIOBrxDOh7fCz2u2.zxoApcg7EnEDMhzC' @ 0 : 0; will stop at (end)

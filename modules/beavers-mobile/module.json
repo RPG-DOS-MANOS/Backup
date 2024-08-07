@@ -1,0 +1,59 @@
+{
+  "title": "Beaver's Mobile Enhancements",
+  "description": "A Module to enhance playing locally with sheets on tablets and map screen.#Local Coop",
+  "id": "beavers-mobile",
+  "version": "1.0.1",
+  "authors": [
+    {
+      "name": "angryBeaver",
+      "url": "https://github.com/angrybeaver"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "scripts": [
+  ],
+  "esmodules": [
+    "src/main.js"
+  ],
+  "styles": [
+    "css/mobile.css"
+  ],
+  "packs": [
+  ],
+  "url": "https://github.com/AngryBeaver/beavers-mobile",
+  "manifest": "https://github.com/AngryBeaver/beavers-mobile/releases/latest/download/module.json",
+  "download": "https://github.com/AngryBeaver/beavers-mobile/releases/latest/download/beavers-mobile.zip",
+  "relationships": {
+    "requires": [
+      {
+        "id": "beavers-system-interface",
+        "type": "module",
+        "manifest": "https://github.com/AngryBeaver/beavers-system-interface/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum" : "2.1.4",
+          "verified": "2.1.4"
+        }
+      }
+    ],
+    "recommends": [
+      {
+        "id": "beavers-gamepad",
+        "type": "module",
+        "manifest": "https://github.com/AngryBeaver/beavers-gamepad/releases/latest/download/module.json",
+        "compatibility": {
+          "verified": "1.0.3"
+        }
+      }
+    ]
+  },
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  }
+}

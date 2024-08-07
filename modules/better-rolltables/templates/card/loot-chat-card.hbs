@@ -1,0 +1,102 @@
+<div class="table-draw" data-table-id="{{ this.id }}" data-pack="{{this.compendium}}" data-id="{{this.id}}">
+    {{#if gmTitleLabel}}
+    <div class="table-title">{{{gmTitleLabel}}}</div>
+    {{/if}}
+    {{#if htmlDescription}}
+    <div class="table-description">{{{htmlDescription}}}</div>
+    {{/if}}
+    <!-- TODO {{{ rollHTML }}} -->
+    {{#brt-unlessEmpty currency}}
+        <div class="table-description" style="font-size: 15px; text-align: center; font-weight:bold;">{{localize 'better-rolltables.Buttons.Currency.label'}} {{format-currencies currency}}
+            {{#if shared}}<span class="better-rolltables-currency-shared">{{ localize 'better-rolltables.Buttons.Currency.Shared' }}</span>{{/if}}
+        </div>
+        <section class="better-rolltables-share-currencies better-rolltables-hidden">
+            {{#each users as |user|}}
+                <div class="flexrow">
+                    <input type="checkbox" checked="checked" data-user-id="{{user.id}}" />
+                    <img src="{{user.img}}"/>
+                    <span>{{user.name}}</span>
+                </div>
+            {{/each}}
+            <button class="better-rolltables-share-currencies-button">{{localize 'better-rolltables.Buttons.Currency.Share' }}</button>
+        </section>
+    {{/brt-unlessEmpty}}
+    <ol class="table-results">
+        {{#each itemsData as |itemData|}}
+            {{#switch itemData.type}}
+                {{#case 0}}
+                    {{#if itemData.item.isHidden}}
+                        <li class="table-result flexrow" data-result-id="{{ itemData.item._id }}" data-result-uuid="">
+                            <img class="result-image" src="modules/better-rolltables/assets/artwork/unidentified-result.webp">
+                            <div class="result-text">{{localize "better-rolltables.label.tableResultTextHiddenOnChat"}}</div>
+                        </li>
+                    {{else}}
+                        <li class="table-result flexrow" data-result-id="{{ itemData.item._id }}" data-result-uuid="">
+                            <img class="result-image" src="{{itemData.item.img}}">
+                            <div class="result-text">{{{itemData.item.text}}}{{#ifgt itemData.quantity 1 }}<strong>&nbsp; &#xD7; {{itemData.quantity}}</strong>{{/ifgt}}</div>
+                        </li>
+                    {{/if}}
+                {{/case}}
+                {{#case 1}}
+                    {{#if itemData.item.isHidden}}
+                        <li class="table-result flexrow" data-result-id="{{ itemData.item._id }}" data-result-uuid="">
+                            <img class="result-image" src="modules/better-rolltables/assets/artwork/unidentified-result.webp">
+                            <div class="result-text" style="font-size: {{itemData.fontSize}}%;">
+                                <a class="content-link" draggable="false"
+                                data-id="{{itemData.item.id}}"
+                                data-tooltip="Loot Item">
+                                    <i class="fas {{entity-icon itemData.documentName}}"></i> {{localize "better-rolltables.label.tableResultTextHiddenOnChat"}}
+                                </a>
+                                {{#ifgt itemData.quantity 1 }}<strong>&nbsp; &#xD7; {{itemData.quantity}}</strong>{{/ifgt}}
+                            </div>
+                        </li>
+                    {{else}}
+                        <li class="table-result flexrow" data-result-id="{{ itemData.item._id }}" data-result-uuid="{{itemData.item.uuid}}">
+                            <img class="result-image" src="{{itemData.item.img}}">
+                            <div class="result-text" style="font-size: {{itemData.fontSize}}%;">
+                                <a class="content-link" draggable="true"
+                                data-entity="{{itemData.documentName}}"
+                                data-document="{{itemData.documentName}}"
+                                data-id="{{itemData.item.id}}"
+                                data-uuid="{{itemData.item.uuid}}"
+                                data-tooltip="Loot Item">
+                                    <i class="fas {{entity-icon itemData.documentName}}"></i> {{{itemData.item.name}}}
+                                </a>
+                                {{#ifgt itemData.quantity 1 }}<strong>&nbsp; &#xD7; {{itemData.quantity}}</strong>{{/ifgt}}
+                            </div>
+                        </li>
+                    {{/if}}
+                {{/case}}
+                {{#case 2}}
+                    {{#if itemData.item.isHidden}}
+                        <li class="table-result flexrow" data-result-id="{{ itemData.item._id }}" data-result-uuid="">
+                            <img class="result-image" src="modules/better-rolltables/assets/artwork/unidentified-result.webp">
+                            <div class="result-text" style="font-size: {{itemData.fontSize}}%;">
+                                <a class="content-link" draggable="false"
+                                data-id="{{itemData.item.id}}"
+                                data-tooltip="Loot Item">
+                                    <i class="fas {{entity-icon itemData.documentName}}"></i> {{localize "better-rolltables.label.tableResultTextHiddenOnChat"}}
+                                </a>
+                                {{#ifgt itemData.quantity 1 }}<strong>&nbsp; &#xD7; {{itemData.quantity}}</strong>{{/ifgt}}
+                            </div>
+                        </li>
+                    {{else}}
+                        <li class="table-result flexrow" data-result-id="{{ itemData.item._id }}" data-result-uuid="{{itemData.item.uuid}}">
+                            <img class="result-image" src="{{itemData.item.img}}">
+                            <div class="result-text" style="font-size: {{itemData.fontSize}}%;">
+                                <a class="content-link" draggable="true"
+                                data-pack="{{#if itemData.compendiumName}}{{itemData.compendiumName}}{{else}}{{itemData.item.pack}}{{/if}}"
+                                data-id="{{itemData.item.id}}"
+                                data-uuid="{{itemData.item.uuid}}"
+                                data-tooltip="Loot Item">
+                                    <i class="fas {{entity-icon itemData.documentName}}"></i> {{{itemData.item.name}}}
+                                </a>
+                                {{#ifgt itemData.quantity 1 }}<strong>&nbsp; &#xD7; {{itemData.quantity}}</strong>{{/ifgt}}
+                            </div>
+                        </li>
+                    {{/if}}
+                {{/case}}
+            {{/switch}}
+        {{/each}}
+    </ol>
+</div>

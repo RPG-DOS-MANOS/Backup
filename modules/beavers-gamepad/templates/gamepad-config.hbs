@@ -1,0 +1,84 @@
+<form autocomplete="off">
+    <div class="flexcol" style="margin-bottom:5px;">
+        {{#unless this.hasGamepadConfigs}}
+            <div style="box-shadow:0 0 0 1px #c9ba9b inset, 0 0 0 0 transparent;background-color: #fffaf3;
+    color: #573a08;padding:10px;border-radius:5px;margin:2px;">
+                <i class="fas fa-exclamation-triangle"></i>
+                {{localize "beaversGamepad.gamepadConfigApp.noGamepad"}}
+            </div>
+        {{/unless}}
+        <div style="box-shadow:0 0 0 1px #a9d5de inset, 0 0 0 0 transparent;    background-color: #f8ffff;
+    color: #276f86;padding:10px;border-radius:5px;margin:2px;">
+            {{localize "beaversGamepad.gamepadConfigApp.info"}}
+        </div>
+    </div>
+    {{#each gamepadConfigs}}
+        <h2>{{this.gamepadId}}-{{@key}}</h2>
+        <div style="margin:0px 20px 20px 20px">
+            <div class="form-group">
+                <label>{{localize "beaversGamepad.gamepadConfigApp.user"}}</label>
+                <div class="form-fields">
+                    {{#if this.userId}}
+                        <div style="padding-right:20px;
+                                text-indent: 20px;
+                                background-size: 18px 18px;
+                                background-position-y: 1px;
+                                background-repeat: no-repeat;
+                                background-image:url('{{lookup (lookup ../users this.userId) "avatar"}}')">{{lookup
+                                (lookup ../users this.userId) "name"}}</div>
+                        <input name="{{@key}}.userId" type="hidden" value="{{this.userId}}">
+                        <a class="removeUser" style="flex:0" data-id="{{@key}}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    {{else}}
+                        <button data-id="{{@key}}" class="addUser" style="min-width:100%">
+                            <i class="fas fa-user"></i>
+                            {{localize "beaversGamepad.gamepadConfigApp.addUser"}}
+                        </button>
+                    {{/if}}
+                </div>
+                <p class="notes">
+                    {{localize "beaversGamepad.gamepadConfigApp.userHint"}}
+                </p>
+            </div>
+            {{#each this.modules}}
+                <div class="flexcol"
+                     style="border-radius:10px;border:2px groove #FFF;padding:5px 10px 10px;margin-bottom:10px">
+                    <div class="form-group" style="margin-bottom:20px;">
+                        <label style="font-weight:800;"><div>{{this.name}}</div></label>
+                        <div class="form-fields">
+                        <a class="delete" style="flex:0" data-id="{{@../key}}" data-module="{{@key}}">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        </div>
+                        <p class="notes">
+                            {{localize this.desc}}
+                        </p>
+                    </div>
+                    {{#each this.binding.axes}}
+                        <div class="flexrow">
+                            <div style="width:120px;margin-right:5px">{{@key}}:</div>
+                            <input type="number" name="{{@../../key}}.modules.{{@../key}}.binding.axes.{{@key}}.index"
+                                   value="{{this.index}}"/>
+                            <div style="width:120px;margin:0px 5px">{{localize
+                                    "beaversGamepad.gamepadConfigApp.reversedLabel"}}</div>
+                            <input name="{{@../../key}}.modules.{{@../key}}.binding.axes.{{@key}}.reversed"
+                                   type="checkbox" {{#if this.reversed}}checked{{/if}}/>
+                        </div>
+                    {{/each}}
+                    {{#each this.binding.buttons}}
+                        <div class="form-group">
+                            <label>{{this.label}}</label>
+                        <div class="form-fields">
+                            <input type="number" name="{{@../../key}}.modules.{{@../key}}.binding.buttons.{{@key}}.index"
+                                   value="{{this.index}}"/>
+                        </div>
+                        </div>
+                    {{/each}}
+                </div>
+            {{/each}}
+            <button data-id="{{@key}}" class="addGamepadModule">{{localize
+                    "beaversGamepad.gamepadConfigApp.addModule"}}</button>
+        </div>
+    {{/each}}
+</form>

@@ -1,0 +1,36 @@
+{
+  "name": "adventuremusic",
+  "id": "adventuremusic",
+  "title": "Adventure Music",
+  "description": "<p>A collection of background, environmental, and combat music from Adventure Music, who compose original instrumental music for tabletop role-playing games.</p>",
+  "author": "Adventure Music",
+  "authors": [],
+  "url": "https://www.patreon.com/adventuremusicjr",
+  "flags": {},
+  "version": "1.2.1",
+  "minimumCoreVersion": "0.5.0",
+  "compatibleCoreVersion": "9",
+  "compatibility": {
+    "minimum": "0.5.0",
+    "verified": 11
+  },
+  "scripts": [],
+  "esmodules": [],
+  "styles": [],
+  "languages": [],
+  "packs": [
+    {
+      "name": "playlists",
+      "label": "Adventure Music",
+      "path": "/packs/playlists.db",
+      "entity": "Playlist",
+      "type": "Playlist",
+      "private": false
+    }
+  ],
+  "socket": false,
+  "manifest": "https://foundryvtt.s3.us-west-2.amazonaws.com/modules/adventuremusic/module.json",
+  "download": "https://foundryvtt.s3.us-west-2.amazonaws.com/modules/adventuremusic/adventuremusic-1.2.1.zip",
+  "coreTranslation": false,
+  "library": false
+}

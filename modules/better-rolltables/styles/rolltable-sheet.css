@@ -1,0 +1,350 @@
+.sheet.roll-table-config.better-rolltables-roll-table-config {
+  /* START ADDED 20223-10-17 */
+  box-shadow: 0 0 0.5em var(--better-rolltables-shadowcolor);
+  min-height: fit-content;
+  /* END ADDED 20223-10-17 */
+  min-width: 680px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content {
+  overflow: hidden;
+  color: var(--better-rolltables-primary-font);
+  padding: 0;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form {
+  display: grid;
+  grid-template-areas: "SheetHeader" "BRTHeader" "SheetResults" "SheetFooter";
+  padding: 0.5em;
+  grid-template-rows: min-content min-content auto var(--better-rolltables-icon-size);
+  overflow-y: scroll;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form header.sheet-header {
+  grid-area: SheetHeader;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form header fieldset {
+  grid-area: BRTHeader;
+  border: 1px solid var(--better-rolltables-header-border);
+  background: var(--better-rolltables-header-background);
+  border-radius: 0.5em;
+  min-height: 1.5em;
+  padding: 0.5em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form header fieldset legend {
+  margin-bottom: -1em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form header fieldset main {
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.5em var(--better-rolltables-exhaustion-lvl2);
+  margin: 1em;
+  padding: 0.5em;
+  position: absolute;
+  z-index: 1000;
+  width: 90%;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form footer.sheet-footer {
+  grid-area: SheetFooter;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form > header {
+  margin-bottom: 0.5em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form button {
+  color: var(--better-rolltables-primary-font);
+  border: 1px solid var(--better-rolltables-header-border);
+  background: var(--better-rolltables-header-background);
+  border-radius: 0.5em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form input[type=text] {
+  border: 1px solid #7a7971;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form input[type=number] {
+  border: 1px solid #7a7971;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form select {
+  border: 1px solid #7a7971;
+  text-overflow: ellipsis;
+  font-size: 0.9em;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form textarea {
+  font-family: var(--better-rolltables-signika);
+  font-weight: 300;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results {
+  position: relative;
+  height: min-content;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results .table-results {
+  min-height: 40vh;
+  height: fit-content;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results .table-results .result-image {
+  flex: 0 0 var(--better-rolltables-icon-size);
+  height: var(--better-rolltables-icon-size);
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results .table-results:nth-child(2n) {
+  background: var(--better-rolltables-faintest-color);
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results .table-results .table-result.table-header {
+  position: sticky;
+  align-self: flex-start;
+  top: 0;
+  z-index: 1;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results .table-results .table-result.drawn {
+  opacity: 0.5;
+  z-index: 0;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config .window-content form .results .table-results .table-result.drawn .lock-result {
+  color: red;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .description > .description-editor {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .description > .description-editor > .editor {
+  min-height: 2rem;
+  border: 1px solid var(--color-border-light-primary);
+  border-radius: 7px;
+  flex: 1 100%;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .description > .description-editor > .editor.prosemirror {
+  min-height: 10rem;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .description > .description-editor > .toggle-editor {
+  flex: 0;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .description,
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .configuration {
+  margin: 0 2rem;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form > .configuration {
+  padding: 0 0.5rem;
+  border: 1px solid var(--color-border-light-primary);
+  border-radius: 7px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2px;
+  align-items: center;
+  flex: 1;
+  overflow: hidden;
+  /*
+     header,
+     .table-results {
+       display: grid;
+       grid-template-columns: 1.5rem 32px 7rem 10fr 3rem 6rem 3rem;
+       grid-template-rows: min-content;
+       row-gap: 2px;
+       align-items: center;
+       width: 100%;
+     }
+  */
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header {
+  position: sticky;
+  font-weight: bold;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > div {
+  border: 1px solid var(--color-border-light-tertiary);
+  border-right-style: none;
+  border-left-style: none;
+  background: rgba(0, 0, 0, 0.05);
+  line-height: 2.2;
+  font-size: var(--font-size-14, 11pt);
+  white-space: nowrap;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > div:first-of-type {
+  border-left-style: solid;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > div:last-of-type {
+  border-right-style: solid;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-create,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-image,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-weight,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-range,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-controls {
+  text-align: center;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-image {
+  flex: 0 0 32px;
+  height: 32px;
+  width: 32px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results header > .result-create {
+  grid-column: span 2;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: overlay scroll;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results .rolltable-10b290-compatibility-line {
+  display: none;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result {
+  border: unset;
+  border-bottom: 1px solid var(--better-rolltables-header-border);
+  /* display: contents;  */
+  /*
+  grid-area: content;
+  overflow: auto;
+
+  &.table-header {
+      overflow: none;
+  }
+
+  > .result-controls {
+      padding: 0 0.3rem;
+  }
+  */
+  /*
+                 > .result-type,
+                 > .result-details,
+                 > .result-weight {
+                     padding: 0 0.2rem;
+                 }
+                 > .result-range {
+  	display: flex;
+  	flex-flow: row nowrap;
+  	gap: 3px;
+  	align-items: center;
+
+  	> input {
+  		flex: 1;
+  	}
+  }
+                 > .result-details {
+                     display: flex;
+                     place-items: center;
+                     gap: 0.2rem;
+
+                     > input {
+                     //height: unset;
+                     }
+                 }
+                 */
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result:nth-child(2n) {
+  background: var(--better-rolltables-faintest-color);
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-target-short {
+  width: 43%;
+  margin-left: 3px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-result-dynamic-dc-value {
+  width: 28%;
+  margin-left: 3px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-result-dynamic-dc-value::placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-result-dynamic-dc-value::-webkit-input-placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-result-dynamic-dc-value::-moz-placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-result-dynamic-dc-value:-ms-input-placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-better-rolltables-formula,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-dc-value,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-skill-value,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-use-percentage-value {
+  width: 14%;
+  margin-left: 3px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-better-rolltables-formula::placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-dc-value::placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-skill-value::placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-use-percentage-value::placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-better-rolltables-formula::-webkit-input-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-dc-value::-webkit-input-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-skill-value::-webkit-input-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-use-percentage-value::-webkit-input-placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-better-rolltables-formula::-moz-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-dc-value::-moz-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-skill-value::-moz-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-use-percentage-value::-moz-placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-better-rolltables-formula:-ms-input-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-dc-value:-ms-input-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-skill-value:-ms-input-placeholder,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-use-percentage-value:-ms-input-placeholder {
+  font-size: 12px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-target-mid {
+  width: 84%;
+  margin-left: 3px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result .result-details .result-brt-custom-name {
+  width: 58%;
+  margin-left: 3px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-result-dynamic-dc-value {
+  flex: 0 0 150px;
+  text-align: center;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-quantity-formula,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-dc-value,
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-skill-value {
+  flex: 0 0 50px;
+  text-align: center;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-use-percentage-value {
+  flex: 0 0 92px;
+  text-align: center;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-details-text {
+  display: flex;
+  place-items: center;
+  gap: 0.2rem;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-controls-header {
+  flex: 0 0 64px;
+  margin: 0;
+  text-align: center;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-brt-controls-header > a {
+  line-height: 36px;
+  margin-right: 5px;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > div {
+  white-space: nowrap;
+  margin: 0;
+  line-height: unset;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result > .result-grip {
+  cursor: grab;
+  justify-self: center;
+  align-self: center;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results tr.table-result.roulette > div {
+  background-color: greenyellow;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form section.results > table.table-results > thead {
+  overflow-y: scroll;
+  display: block;
+}
+.sheet.roll-table-config.better-rolltables-roll-table-config form .sheet-footer {
+  gap: 0.3rem;
+}
+
+/*# sourceMappingURL=rolltable-sheet.css.map */

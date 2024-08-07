@@ -1,0 +1,30 @@
+<div>
+    <h2>{{localize "actor-attribute-list.attributeViewer.contentHeader"}} {{actorName}}</h3>
+        <input id="attributeListFilter" type="text" placeholder="{{localize "actor-attribute-list.attributeViewer.filterPlaceholder"}}" />
+        {{#each categories}}
+        <div class="attribute-viewer-category">
+            <h3>{{this.categoryName}}</h3>
+            <table>
+                <colgroup>
+                    <col class="key-width" />
+                    <col class="value-width" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>{{localize "actor-attribute-list.attributeViewer.tableHeaderAttribute"}}</th>
+                        <th>{{localize "actor-attribute-list.attributeViewer.tableHeaderValue"}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each attributes}}
+                    <tr>
+                        <td><input class="attribute-viewer-key-field" type="text" value="@{{this.attName}}" readonly />
+                        </td>
+                        <td>{{this.attValue}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        {{/each}}
+</div>

@@ -1,0 +1,425 @@
+r {
+	"label": "Habilidades",
+	"entries": [
+		{
+			"id": "Accounting",
+			"name": "Contabilidade",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Acting",
+			"name": "Atuação",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Animal Handling",
+			"name": "Treinar Animais",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Anthropology",
+			"name": "Antropologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Appraise",
+			"name": "Avaliação",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Archaeology",
+			"name": "Arqueologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Art/Craft (Any)",
+			"name": "Arte/Ofício (Genérico)",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Artillery",
+			"name": "Artilharia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Astronomy",
+			"name": "Astronomia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Axe",
+			"name": "Machado",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Biology",
+			"name": "Biologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Botany",
+			"name": "Botânica",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Bow",
+			"name": "Arco",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Brawl",
+			"name": "Briga",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Chainsaw",
+			"name": "Motoserra",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Charm",
+			"name": "Charme",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Chemistry",
+			"name": "Química",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Climb",
+			"name": "Escalar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Computer Use",
+			"name": "Usar Computadores",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Credit Rating",
+			"name": "Nível de Crédito",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Cryptography",
+			"name": "Criptografia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Cthulhu Mythos",
+			"name": "Mythos de Cthulhu",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Demolitions",
+			"name": "Demolição",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Disguise",
+			"name": "Disfarce",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Diving",
+			"name": "Mergulho",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Dodge",
+			"name": "Esquivar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Drive Auto",
+			"name": "Dirigir Automóveis",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Electrical Repair",
+			"name": "Consertos Elétricos",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Electronics",
+			"name": "Eletrônicos",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Fast Talk",
+			"name": "Lábia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Fine Art",
+			"name": "Belas Artes",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "First Aid",
+			"name": "Primeros Socorros",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Flail",
+			"name": "Mangual",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Flamethrower",
+			"name": "Lança-Chamas",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Forensics",
+			"name": "Ciência Forense",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Forgery",
+			"name": "Forjar Documentos",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Garrote",
+			"name": "Garrote",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Geology",
+			"name": "Geologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Handgun",
+			"name": "Pistolas",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Heavy Weapons",
+			"name": "Armas Pesadas",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "History",
+			"name": "História",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Hypnosis",
+			"name": "Hipnose",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Intimidate",
+			"name": "Intimidação",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Jump",
+			"name": "Saltar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Language (Any)",
+			"name": "Língua (Qualquer)",
+			"description": ""
+		},
+		{
+			"id": "Language (Other)",
+			"name": "Língua (Outra)",
+			"description": "<p><span style=\"color: #191813; font-size: 13px;\">Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</span></p>"
+		},
+		{
+			"id": "Language (Own)",
+			"name": "Língua (Nativa)",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Law",
+			"name": "Direito",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Library Use",
+			"name": "Usar Bibliotecas",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Listen",
+			"name": "Escutar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Locksmith",
+			"name": "Chaveiro",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Machine Gun",
+			"name": "Metralhadora",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Mathematics",
+			"name": "Matemática",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Mechanical Repair",
+			"name": "Conserto Mecânico",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Medicine",
+			"name": "Medicina",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Meteorology",
+			"name": "Meteorologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Natural World",
+			"name": "Mundo Natural",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Navigate",
+			"name": "Navegação",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Occult",
+			"name": "Ocultismo",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Operate Heavy Machinery",
+			"name": "Operar Maquinário",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Persuade",
+			"name": "Persuasão",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Pharmacy",
+			"name": "Farmácia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Photography",
+			"name": "Fotografia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Physics",
+			"name": "Física",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Pilot (Any)",
+			"name": "Pilotar (Qualquer)",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Psychoanalysis",
+			"name": "Psicanálise",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Psychology",
+			"name": "Psicologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Read Lips",
+			"name": "Ler Lábios",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Ride",
+			"name": "Cavalgar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Rifle/Shotgun",
+			"name": "Rifles/Espingardas",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Science (Any)",
+			"name": "Ciência (Qualquer)",
+			"description": "<p><span style=\"color: #191813; font-size: 13px;\">Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</span></p>"
+		},
+		{
+			"id": "Sleight of Hand",
+			"name": "Prestidigitação",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Spear",
+			"name": "Lança",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Spot Hidden",
+			"name": "Encontrar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Stealth",
+			"name": "Furtividade",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Submachine Gun",
+			"name": "Sub-Metralhadora",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Survival (Any)",
+			"name": "Sobrevivência (Qualquer)",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Swim",
+			"name": "Nadar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Sword",
+			"name": "Espada",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Throw",
+			"name": "Arremessar",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Track",
+			"name": "Rastrear",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Track (Any)",
+			"name": ">>>Rastrear (Genérico)",
+			"description": ""
+		},
+		{
+			"id": "Whip",
+			"name": "Chicote",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		},
+		{
+			"id": "Zoology",
+			"name": "Zoologia",
+			"description": "<p>Consulte o Livro do Guardião de Chamado de Cthulhu 7ª Edição.</p>"
+		}
+	]
+}

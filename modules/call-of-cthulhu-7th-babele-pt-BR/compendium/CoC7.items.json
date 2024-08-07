@@ -1,0 +1,35 @@
+{
+	"label": "Exemplos de Objetos",
+	"entries": [
+		{
+			"id": "1920's Setup Example",
+			"name": "Exemplo de Personagem Anos 1920",
+			"description": "<p>Modelo de um personagem feito para jogar nos anos 1920.</p>\n<p>&nbsp;</p>"
+		},
+		{
+			"id": "Archetype Example",
+			"name": "Exemplo de Arquétipo",
+			"description": null
+		},
+		{
+			"id": "Death ray (prototype)",
+			"name": "Raio da Morte (protótipo)",
+			"description": ""
+		},
+		{
+			"id": "Experimental weapon",
+			"name": "Arma Experimental",
+			"description": "<p>Descripción del arma</p>\n<p>si seleccionas un 'Área de efecto' se habilitarán 3 daños y alcances distintos</p>\n<p>si seleccionas 'Full-auto' solo se permitirá elegir 2 habilidades diferentes para el arma</p>\n<p>si seleccionas 'Especial' se activará un campo manual especial</p>\n<p>En la pestaña de combate si los iconos tienen un fondo rojo significa que no se ha seleccionado ninguna habilidad para el arma</p>\n<p>Edita el arma y selecciona la habilidad correcta.</p>"
+		},
+		{
+			"id": "Occupation Example",
+			"name": "Exemplo de Ocupação",
+			"description": null
+		},
+		{
+			"id": "Punch",
+			"name": "Porrada",
+			"description": ""
+		}
+	]
+}

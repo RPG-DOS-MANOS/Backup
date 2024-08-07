@@ -1,0 +1,205 @@
+{
+    "combatReady": {
+        "text": {
+            "wrapItUp": "Wrap it up",
+            "turn": "Seu Turno",
+            "next": "Próximo"
+        },
+        "settings": {
+            "timeMax": {
+                "name": "Tempo Máximo por Turno",
+                "hint": "A duração do turno em minutos. O valor máximo é de 30min por turno."
+            },
+            "disableNextUp": {
+                "name": "Desative a notificação 'Próximo'",
+                "hint": "Remove a notificação recebida ao jogador do proximo turno"
+            },
+            "disableNextUpOnLastTurn": {
+                "name": "Disable 'Next Up' on round change",
+                "hint": "Remove notification about your next turn if it involves a round change"
+            },
+            "disableTimer": {
+                "name": "Desabilitar cronometro",
+                "hint": "Desativa completamente o barra de cronometro na parte inferior da tela."
+            },
+            "disableTimerGM": {
+                "name": "Disable timer for the GM",
+                "hint": "Disable timer feature at bottom of the screen for GM npc´s"
+            },
+            "disableTimerOnHidden": {
+				"name": "Disable timer for hidden npc",
+				"hint": "Disable timer feature GM npc´s that are currently hidden"
+			},
+            "showEndTurnDialog": {
+                "name": "Exibe mensagem de Fim de turno",
+                "hint": "Exibe um diálogo para os jogadores no turno que fornece um botão para encerrar o turno atual"
+            },
+            "showWrapItUpDialog": {
+                "name": "Show a Wrap It Up Dialog",
+                "hint": "Displays a Dialog to the GM on players turn that provides a button to start the timer, this will prevent the timer autostart"
+            },
+            "tickSound": {
+                "name": "Som de tique-taque",
+                "hint": "Crie um som de tique-taque quando o turno do jogador estiver acabando"
+            },
+            "expireSound": {
+                "name": "Expire Sound",
+                "hint": "Create an expire sound for the selected players when the current player's turn is out of time"
+            },
+            "roundSound": {
+                "name": "Round Sound",
+                "hint": "Create an sound audible for the selected players when the round increases"
+            },
+            "volume": {
+                "name": "Volume",
+                "hint": "Defina o volume geral do módulo"
+            },
+			"panToToken": {
+				"name": "Enable panning to combatants",
+				"hint": "Pan to the current combatant for the selected players, only auto select token for the token owner"
+			},
+            "tickOnLast": {
+                "name": "Tick on last seconds",
+                "hint": "Set the last seconds remaining for the ticking to start"
+            },
+            "autoEndOnTimer": {
+                "name": "Auto end turn",
+                "hint": "Ends the current turn if the timer runs out of time (Don´t apply to NPC)"
+            },
+            "tickSoundFile": {
+                "name": "Ticking sound file",
+                "hint": "Select the sound file you would like to use for the timer ticking, if is invalid it will return to the default"
+            },
+            "expireSoundFile": {
+                "name": "Expire sound file",
+                "hint": "Select the sound file you would like to use for the ticking sound, if is invalid it will return to the default"
+            },
+            "roundSoundFile": {
+                "name": "Round sound file",
+                "hint": "Select the sound file you would like to use for the ticking sound, if is invalid it will return to the default"
+            },
+            "nextSoundFile": {
+                "name": "NextUp sound file",
+                "hint": "Select the sound file you would like to use for the ticking sound, if is invalid it will return to the default"
+            },
+            "turnSoundFile": {
+                "name": "YourTurn sound file",
+                "hint": "Select the sound file you would like to use for the ticking sound, if is invalid it will return to the default"
+            },
+            "ackSoundFile": {
+                "name": "Acknowledge sound file",
+                "hint": "Select the sound file you would like to use for the ticking sound, if is invalid it will return to the default"
+            },
+            "text": {
+                "everyone": "Everyone",
+                "onlyPlayers": "All Players except GM or Assistants",
+                "currentCombatant": "Current Player or GM if NPC",
+                "GM": "GM and Assistants",
+                "GMAndPlayer": "GM, Assistants and the Current player",
+                "none": "Nobody"
+            },
+            "animations": {
+                "settings": {
+                    "name": "Animation Theme Settings",
+                    "hint": "Change the animation settings",
+                    "button": "Animation Settings"
+                },
+                "testing": {
+                    "name": "Animation Testing",
+                    "nextUp": "Test NextUp Animation",
+                    "yourTurn": "Test YourTurn Animation",
+                    "roundChange": "Test RoundChange Animation",
+                    "hint": "To properly test an animation, first you need to apply any pending changes to it. Aditionally you should select a token in the Canvas, if none selected the module would use your user name for the tests."
+                },
+                "noSettings": "This theme has no settings",
+                "applyChanges": "Apply Changes",
+                "selectTheme": {
+                    "name": "Selected Animation Theme",
+                    "hint": "Select the animation theme you would like to use for the alerts."
+                }
+            },
+			"timers": {
+				"settings": {
+					"name": "Timer Settings",
+					"hint": "Change the timer settings",
+					"button": "Timer Settings"
+				},
+				"noSettings": "This timer has no settings",
+				"applyChanges": "Apply Changes",
+				"selectTimer": {
+					"name": "Selected Timer",
+					"hint": "Select the timer you would like to use."
+				}
+			}
+        },
+        "animations": {
+            "native": {
+                "settings": {
+                    "disableNextUpLingering": {
+                        "name": "Hide 'Next Up' notification on click",
+                        "hint": "Remove the Next Up text whe the player clicks it"
+                    },
+                    "animationStyle": {
+                        "name": "Set the animation settings",
+                        "hint": "Choose how much animation the module will render"
+                    },
+                    "useCombatantNameAsSubtitle": {
+                        "name": "Combatant name as Subtitle",
+                        "hint": "Use the token combatant name for a second line subtitle",
+                        "neither": "Don`t use it",
+                        "nextUp": "Use it in the NextUp animation",
+                        "yourTurn": "Use it in the YourTurn animation",
+                        "both": "Use it in Both animations"
+                    },
+                    "combatantNameOrigin": {
+						"name": "Name Source",
+						"hint": "Select the source for the combatant name (used in the subtitle and the custom text {{name}} variable)",
+						"linkedActor": "Linked Actor to token",
+						"currentPlayer": "Player",
+						"combatant": "Combatant"
+					},
+					"customTextForNextUp": {
+						"name": "Advanced Setting: Custom text for NextUp animation",
+						"hint": "For advanced users only: Use a custom text for the animation, this will override any localization. You can use the variable {{name}} in the text to insert the name from the selected source also available {{combatant}}, {{player}}, {{actor}} as variables. It supports HTML the parent container use flex in column mode"
+					},
+					"customTextForYourTurn": {
+						"name": "Advanced Setting: Custom text for YourTurn animation",
+						"hint": "For advanced users only: Use a custom text for the animation, this will override any localization. You can use the variable {{name}} in the text to insert the name from the selected source also available {{combatant}}, {{player}}, {{actor}} as variables. It supports HTML the parent container use flex in column mode"
+					},
+					"arrowsColor": {
+						"name": "Color of the arrows",
+						"hint": "Select the color of the arrows from the YourTurn Animation"
+					},
+					"fontColor": {
+						"name": "Color of the font",
+						"hint": "Select the color of the font used in the texts"
+					},
+                    "text": {
+                        "complete": "All animations",
+                        "reduced": "Just the text",
+                        "none": "No animations"
+                    }
+                }
+            }
+        },
+		"timers": {
+			"native": {
+				"settings": {
+					"timerColor": {
+						"name": "Color of the timer",
+						"hint": "Select the color of the timer"
+					},
+					"timeBarLocation": {
+						"name": "Timer location",
+						"hint": "Select the location of the timer",
+						"text": {
+							"top": "Top",
+							"sidebar": "Sidebar",
+							"bottom": "Bottom"
+						}
+					}
+				}
+			}
+		}
+    }
+}

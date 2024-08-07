@@ -1,0 +1,539 @@
+import { getCombats, MODULE_NAME } from "./settings.js";
+import { currentAnimation, currentTimer } from "./api.js";
+import { warn } from "../combatready.js";
+export const volume = () => {
+    return (Number)(game.settings.get(MODULE_NAME, "volume")) / 100.0;
+};
+var Difference;
+(function (Difference) {
+    Difference[Difference["Current"] = 1] = "Current";
+    Difference[Difference["Next"] = 2] = "Next";
+    Difference[Difference["Both"] = 3] = "Both";
+})(Difference || (Difference = {}));
+export class CombatReady {
+    /**
+     * This function fills common used DATA through the module
+     *
+     * @static
+     * @returns {[boolean, Difference]} the boolean indicates if the data was correctly filled and the Difference if it is necessary to update themes
+     */
+    static fillData() {
+        let combats = getCombats();
+        if (combats == undefined) {
+            warn("Combats undefined failing fillData()");
+            return [false, Difference.Both];
+        }
+        let curCombat = combats.active;
+        if (curCombat == undefined) {
+            warn("Current Combat undefined failing fillData()");
+            return [false, Difference.Both];
+        }
+        let curCombatant = curCombat.combatant;
+        if (curCombatant == undefined) {
+            warn("Current Combatant undefined failing fillData()");
+            return [false, Difference.Both];
+        }
+        curCombatant = deepClone(curCombatant);
+        let nextTurn = ((curCombat.turn || 0) + 1) % curCombat.turns.length;
+        let nextCombatant = curCombat.turns[nextTurn];
+        if (nextCombatant == undefined) {
+            warn("Next Combatant undefined failing fillData()");
+            return [false, Difference.Both];
+        }
+        nextCombatant = deepClone(nextCombatant);
+        CombatReady.OLD_DATA = CombatReady.DATA;
+        CombatReady.DATA = { combats: combats, currentCombat: curCombat, currentCombatant: curCombatant, nextCombatant: nextCombatant };
+        let newState = Difference.Both;
+        if (CombatReady.OLD_DATA !== undefined) {
+            newState = CombatReady.checkForNewState();
+        }
+        return [true, newState];
+    }
+    /**
+     * This functions verifies if the old Data is the same as the new data
+     * This would mean that even if we change turns or rounds or delete a combatant there is not
+     * necessary an update to the animations.
+     *
+     * @static
+     * @returns {Boolean}
+     */
+    static checkForNewState() {
+        let diff = 0;
+        diff |= (CombatReady.OLD_DATA.currentCombatant != CombatReady.DATA.currentCombatant) ? 1 : 0;
+        diff |= (CombatReady.OLD_DATA.nextCombatant != CombatReady.DATA.nextCombatant) ? 2 : 0;
+        return diff;
+    }
+    static resolvePlayersPermission(permString, callback) {
+        switch (permString) {
+            case "None":
+                break;
+            case "GM+Player":
+                if (game.user?.isGM || CombatReady.DATA.currentCombatant.actor?.isOwner) {
+                    callback();
+                }
+                break;
+            case "GM":
+                if (game.user?.isGM) {
+                    callback();
+                }
+                break;
+            case "OnlyPlayers":
+                if (!game.user?.isGM) {
+                    callback();
+                }
+                break;
+            case "Player":
+                if (((CombatReady.DATA.currentCombatant?.actor?.isOwner ?? false) && !game.user?.isGM)
+                    || (CombatReady.DATA.currentCombatant?.players.length == 0 ?? false) && game.user?.isGM) {
+                    callback();
+                }
+                break;
+            case "Everyone":
+            default:
+                callback();
+                break;
+        }
+    }
+    static playSound(sound) {
+        let playTo = "Everyone";
+        try {
+            playTo = game.settings.get(MODULE_NAME, sound.setting);
+        }
+        catch (e) { }
+        CombatReady.resolvePlayersPermission(playTo, () => { AudioHelper.play({ src: sound.file, volume: volume() }); });
+    }
+    static isMasterOfTime(user) {
+        if (user == null)
+            return false;
+        return user.isGM && user.id == CombatReady.MASTEROFTIME;
+    }
+    static async closeEndTurnDialog() {
+        // go through all dialogs that we've opened and closed them
+        for (let d of CombatReady.EndTurnDialog) {
+            d.close();
+        }
+        CombatReady.EndTurnDialog.length = 0;
+    }
+    static showEndTurnDialog() {
+        CombatReady.closeEndTurnDialog().then(() => {
+            let d = new Dialog({
+                title: "End Turn",
+                default: "",
+                content: "",
+                buttons: {
+                    endturn: {
+                        label: "End Turn",
+                        callback: () => {
+                            getCombats().active?.nextTurn();
+                        },
+                    },
+                },
+            }, {
+                width: 30,
+                top: 5,
+            });
+            d.render(true);
+            // add dialog to array of dialogs. when using just a single object we'd end up with multiple dialogs
+            CombatReady.EndTurnDialog.push(d);
+        });
+    }
+    static async closeWrapItUpDialog() {
+        // go through all dialogs that we've opened and closed them
+        for (let d of CombatReady.WrapItUpDialog) {
+            d.close();
+        }
+        CombatReady.WrapItUpDialog.length = 0;
+    }
+    static showWrapItUpDialog() {
+        CombatReady.closeWrapItUpDialog().then(() => {
+            if (game.settings.get(MODULE_NAME, "disabletimer")) {
+                return;
+            }
+            let d = new Dialog({
+                title: "Wrap It Up",
+                default: "",
+                content: "",
+                buttons: {
+                    wrapitup: {
+                        label: game.i18n.localize("combatReady.text.wrapItUp"),
+                        callback: () => {
+                            CombatReady.timerStart();
+                        },
+                    },
+                },
+            }, {
+                width: 30,
+                top: 5,
+            });
+            d.render(true);
+            // add dialog to array of dialogs. when using just a single object we'd end up with multiple dialogs
+            CombatReady.WrapItUpDialog.push(d);
+        });
+    }
+    static adjustWidth() {
+        currentAnimation.adjustWidth();
+        currentTimer.adjustWidth();
+    }
+    /**
+     * JQuery stripping
+     */
+    static init() {
+        CombatReady.READY = true;
+        CombatReady.INTERVAL_IDS = [];
+        // sound statics
+        CombatReady.TURN_SOUND = { file: game.settings.get(MODULE_NAME, "turnsoundfile"), setting: "turnsound" };
+        CombatReady.NEXT_SOUND = { file: game.settings.get(MODULE_NAME, "nextsoundfile"), setting: "nextsound" };
+        CombatReady.ROUND_SOUND = { file: game.settings.get(MODULE_NAME, "roundsoundfile"), setting: "roundsound" };
+        CombatReady.EXPIRE_SOUND = { file: game.settings.get(MODULE_NAME, "expiresoundfile"), setting: "expiresound" };
+        CombatReady.ACK_SOUND = { file: game.settings.get(MODULE_NAME, "acksoundfile"), setting: "acksound" };
+        CombatReady.TICK_SOUND = { file: game.settings.get(MODULE_NAME, "ticksoundfile"), setting: "ticksound" };
+    }
+    /**
+     * Animate... Weee
+     */
+    static doAnimateTurn() {
+        if (!CombatReady.READY) {
+            CombatReady.init();
+        }
+        currentAnimation.yourTurnAnimation();
+        // Panning to current token and taking control
+        // play a sound, meep meep!
+        CombatReady.playSound(CombatReady.TURN_SOUND);
+    }
+    static getCombatantToken() {
+        //Check if this combat is unlinked
+        let isUnlinked = CombatReady.DATA.currentCombat.scene == null;
+        if (isUnlinked) {
+            //Get if this is a player token or an NPC token
+            let combatantIsLinked = CombatReady?.DATA?.currentCombatant?.token?.isLinked ?? false;
+            //Get the actor Id
+            let combatantActorId = CombatReady?.DATA?.currentCombatant?.actor?.id ?? null;
+            //Get the token Id
+            let combatantTokenId = CombatReady?.DATA?.currentCombatant?.token?.id ?? null;
+            //Get the token name
+            let combatantTokenName = CombatReady?.DATA?.currentCombatant?.token?.name;
+            let combatantToken;
+            let combatantsTokens;
+            if (combatantIsLinked) {
+                combatantToken = canvas.tokens?.placeables.find((token) => {
+                    return token?.actor?.id === combatantActorId ?? false;
+                });
+                if (combatantToken !== undefined)
+                    return combatantToken;
+            }
+            //Check if there is a token that shares the actorId (Player Tokens, tokens on the original scene before unlinked)
+            combatantToken = canvas.tokens?.placeables.find((token) => {
+                return token?.id === combatantTokenId ?? false;
+            });
+            if (combatantToken !== undefined)
+                return combatantToken;
+            //If there is not a token that share the actorId is possible to be a placeholder token
+            //We retrieve the list of tokens that share the same name if only one is present that token we will return
+            combatantsTokens = canvas.tokens?.placeables.filter((token) => {
+                return token?.name === combatantTokenName ?? false;
+            });
+            if (combatantsTokens !== undefined) {
+                if ((combatantsTokens.length) == 1) {
+                    return combatantsTokens[0];
+                }
+            }
+            return undefined;
+        }
+        else {
+            return (CombatReady?.DATA?.currentCombatant?.token?.object);
+        }
+    }
+    static doPanToToken(control) {
+        let token = CombatReady.getCombatantToken();
+        if (token !== undefined) {
+            let x = token.center.x ?? 0;
+            let y = token.center.y ?? 0;
+            canvas.animatePan({
+                x: x,
+                y: y,
+                duration: 250
+            }).then(() => {
+                if (control) {
+                    //@ts-ignore
+                    token.control();
+                }
+            });
+        }
+    }
+    /**
+     * Animate the "you're up next" prompt
+     */
+    static doAnimateNext() {
+        if (game.settings.get(MODULE_NAME, "disablenextup")) {
+            return;
+        }
+        if (!CombatReady.READY) {
+            CombatReady.init();
+        }
+        currentAnimation.nextUpAnimation();
+        // play a sound, beep beep!
+        CombatReady.playSound(CombatReady.NEXT_SOUND);
+    }
+    static hadToRunAnimationForPlayer(combatant) {
+        if (combatant.actor !== null) {
+            let isSelectedCharacter = game.users?.filter(u => {
+                if (u.active && !u.isGM) {
+                    //@ts-ignore
+                    return combatant.actor == u.character;
+                }
+                return false;
+            });
+            let isCurrentUserCharacter = game.user?.character == combatant.actor;
+            let isOwned = combatant.actor.isOwner && !game.user?.isGM;
+            let runAnimation = isCurrentUserCharacter || isSelectedCharacter?.length == 0 && isOwned;
+            return runAnimation;
+        }
+        return false;
+    }
+    static async checkForCurrentTurnAnimation() {
+        currentAnimation.cleanAnimations();
+        let closing = CombatReady.closeEndTurnDialog();
+        await closing;
+        let runAnimation = CombatReady.hadToRunAnimationForPlayer(CombatReady.DATA.currentCombatant);
+        let panToTokenPerm = game.settings.get(MODULE_NAME, "pantotoken");
+        if (runAnimation) {
+            //replace with config dependant // Only to player whom token is
+            CombatReady.resolvePlayersPermission(panToTokenPerm, () => { CombatReady.doPanToToken(true); });
+            CombatReady.doAnimateTurn();
+            if (game.settings.get(MODULE_NAME, "endturndialog"))
+                CombatReady.showEndTurnDialog();
+            return true;
+        }
+        else if (game.user?.isGM) {
+            CombatReady.resolvePlayersPermission(panToTokenPerm, () => { CombatReady.doPanToToken(true); });
+        }
+        else {
+            CombatReady.resolvePlayersPermission(panToTokenPerm, () => { CombatReady.doPanToToken(false); });
+        }
+        return false;
+    }
+    static async checkForNextTurnAnimation() {
+        currentAnimation.cleanAnimations();
+        // next combatant
+        let nextTurn = ((CombatReady.DATA.currentCombat.turn || 0) + 1) % CombatReady.DATA.currentCombat.turns.length;
+        let nextCombatant = CombatReady.DATA.nextCombatant;
+        //@ts-ignore
+        if (game.settings.get("core", "combatTrackerConfig")?.skipDefeated ?? false) {
+            while (nextCombatant.isDefeated) {
+                if (nextTurn == CombatReady.DATA.currentCombat.turn)
+                    break; // Avoid running infinitely
+                nextTurn = (nextTurn + 1) % CombatReady.DATA.currentCombat.turns.length;
+                nextCombatant = CombatReady.DATA.currentCombat.turns[nextTurn];
+            }
+        }
+        let closing = CombatReady.closeEndTurnDialog();
+        await closing;
+        let runAnimation = CombatReady.hadToRunAnimationForPlayer(CombatReady.DATA.nextCombatant);
+        if (runAnimation) {
+            if (nextTurn == 0 && game.settings.get(MODULE_NAME, "disablenextuponlastturn"))
+                return false;
+            CombatReady.doAnimateNext();
+            return true;
+        }
+        return false;
+    }
+    /**
+     * Check if the current combatant needs to be updated
+     */
+    static async toggleCheck(newRound = false) {
+        let result = CombatReady.fillData();
+        if (!result[0]) {
+            //Clean animations because we are in a possible invalid state
+            currentAnimation.cleanAnimations();
+            return;
+        }
+        ;
+        let difference = result[1];
+        if (CombatReady.DATA.currentCombat && CombatReady.DATA.currentCombat.started) {
+            if (game.settings.get(MODULE_NAME, "wrapitupdialog")) {
+                if (game.user?.isGM && CombatReady.DATA.currentCombatant.players.length > 0) {
+                    CombatReady.showWrapItUpDialog();
+                }
+                else {
+                    CombatReady.closeWrapItUpDialog();
+                }
+            }
+            else {
+                if (CombatReady.isMasterOfTime(game.user)) {
+                    CombatReady.timerStart();
+                }
+            }
+            let animationRan = false;
+            let nextTurn;
+            if (difference & 1) {
+                animationRan = await CombatReady.checkForCurrentTurnAnimation();
+            }
+            if (difference & 2 && !animationRan) {
+                nextTurn = CombatReady.checkForNextTurnAnimation();
+            }
+            animationRan || (animationRan = await nextTurn);
+            if (!animationRan && newRound) {
+                CombatReady.nextRound();
+            }
+        }
+        else if (!CombatReady.DATA.currentCombat) {
+            CombatReady.closeEndTurnDialog();
+            CombatReady.closeWrapItUpDialog();
+        }
+    }
+    static nextRound() {
+        let roundSoundPerm = game.settings.get(MODULE_NAME, "roundsound");
+        currentAnimation.nextRoundAnimation();
+        CombatReady.resolvePlayersPermission(roundSoundPerm, () => { CombatReady.playSound(CombatReady.ROUND_SOUND); });
+    }
+    /**
+     *
+     */
+    static async timerTick(TIMECURRENT = null) {
+        if (!CombatReady.READY)
+            return;
+        if (game.settings.get(MODULE_NAME, "disabletimer")) {
+            return;
+        }
+        if (game.settings.get(MODULE_NAME, "disabletimerGM")) {
+            if (CombatReady.DATA.currentCombatant.players.length == 0)
+                return;
+        }
+        if (game.settings.get(MODULE_NAME, "disabletimerOnHidden")) {
+            if (CombatReady.DATA.currentCombatant.hidden && CombatReady.DATA.currentCombatant.players.length == 0)
+                return;
+        }
+        if (CombatReady.isMasterOfTime(game.user)) {
+            CombatReady.TIMECURRENT++;
+            CombatReady.SOCKET.executeForOthers('timerTick', CombatReady.TIMECURRENT);
+        }
+        else {
+            if (TIMECURRENT == null) {
+                CombatReady.TIMECURRENT++;
+            }
+            else {
+                CombatReady.TIMECURRENT = TIMECURRENT;
+            }
+        }
+        // If we're in the last seconds defined we tick
+        if (CombatReady.TIMEMAX - CombatReady.TIMECURRENT <= game.settings.get(MODULE_NAME, "tickonlast")) {
+            CombatReady.playSound(CombatReady.TICK_SOUND);
+        }
+        let width = (CombatReady.TIMECURRENT * 100) / CombatReady.TIMEMAX;
+        if (width > 100) {
+            if (CombatReady.isMasterOfTime(game.user)) {
+                await CombatReady.timerStop();
+            }
+            if (game.settings.get(MODULE_NAME, "autoendontimer")) {
+                if (CombatReady.isMasterOfTime(game.user)) { //run only from the GM side
+                    if (CombatReady.DATA.currentCombatant.players.length > 0) { //run only if the actor has owners
+                        getCombats().active?.nextTurn();
+                    }
+                }
+            }
+            CombatReady.playSound(CombatReady.EXPIRE_SOUND);
+        }
+        else {
+            currentTimer.tick();
+        }
+    }
+    /**
+     *
+     */
+    static setTimeMax(num) {
+        CombatReady.TIMEMAX = num;
+    }
+    /**
+     *
+     */
+    static async timerStart() {
+        if (!CombatReady.READY)
+            return;
+        CombatReady.TIMECURRENT = 0;
+        if (game.settings.get(MODULE_NAME, "disabletimer"))
+            return;
+        if (CombatReady.isMasterOfTime(game.user)) {
+            CombatReady.SOCKET.executeForOthers('timerStart');
+            if (!game.paused) {
+                for (let idx = CombatReady.INTERVAL_IDS.length - 1; idx >= 0; --idx) {
+                    let interval = CombatReady.INTERVAL_IDS[idx];
+                    if (interval.name === "clock") {
+                        window.clearInterval(interval.id);
+                        CombatReady.INTERVAL_IDS.splice(idx, 1);
+                        break;
+                    }
+                }
+                // If not a GM, and the actor is hidden, don't show it
+                CombatReady.INTERVAL_IDS.push({
+                    name: "clock",
+                    id: window.setInterval(CombatReady.timerTick, 1000),
+                });
+            }
+        }
+        currentTimer.start();
+    }
+    /**
+     *
+     */
+    static async timerStop() {
+        if (!CombatReady.READY)
+            return;
+        if (CombatReady.isMasterOfTime(game.user)) {
+            for (let idx = CombatReady.INTERVAL_IDS.length - 1; idx >= 0; --idx) {
+                let interval = CombatReady.INTERVAL_IDS[idx];
+                if (interval.name === "clock") {
+                    window.clearInterval(interval.id);
+                    CombatReady.INTERVAL_IDS.splice(idx, 1);
+                    break;
+                }
+            }
+            CombatReady.SOCKET.executeForOthers('timerStop');
+        }
+        // kill paused bar
+        CombatReady.TIMECURRENT = 0;
+        currentTimer.stop();
+    }
+    /**
+     *
+     */
+    static timerPause() {
+        if (!CombatReady.READY)
+            return;
+        if (CombatReady.isMasterOfTime(game.user)) {
+            CombatReady.SOCKET.executeForOthers('timerPause');
+            for (let idx = CombatReady.INTERVAL_IDS.length - 1; idx >= 0; --idx) {
+                let interval = CombatReady.INTERVAL_IDS[idx];
+                if (interval.name === "clock") {
+                    window.clearInterval(interval.id);
+                    CombatReady.INTERVAL_IDS.splice(idx, 1);
+                    break;
+                }
+            }
+        }
+        currentTimer.pause();
+    }
+    /**
+     *
+     */
+    static timerResume() {
+        if (!CombatReady.READY)
+            return;
+        if (CombatReady.isMasterOfTime(game.user)) {
+            for (let idx = CombatReady.INTERVAL_IDS.length - 1; idx >= 0; --idx) {
+                let interval = CombatReady.INTERVAL_IDS[idx];
+                if (interval.name === "clock")
+                    return;
+            }
+            CombatReady.INTERVAL_IDS.push({
+                name: "clock",
+                id: window.setInterval(CombatReady.timerTick, 1000),
+            });
+            CombatReady.SOCKET.executeForOthers('timerResume');
+        }
+        currentTimer.resume();
+    }
+}
+CombatReady.EndTurnDialog = [];
+CombatReady.WrapItUpDialog = [];
+CombatReady.READY = false;
+CombatReady.WAITING_FOR_UPDATE = false;

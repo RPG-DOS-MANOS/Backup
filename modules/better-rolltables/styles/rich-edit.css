@@ -1,0 +1,16 @@
+.app.sheet.better-rolltables-rolltable-result-richedit {
+  min-height: 260px;
+  min-width: 560px;
+}
+.app.sheet.better-rolltables-rolltable-result-richedit section.window-content form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.app.sheet.better-rolltables-rolltable-result-richedit section.window-content form .editor {
+  height: 100%;
+  padding: 0.2rem;
+}
+
+/*# sourceMappingURL=rich-edit.css.map */
