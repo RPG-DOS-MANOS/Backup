@@ -1,0 +1,41 @@
+{
+	"name": "sweetnothings",
+	"id": "sweetnothings",
+	"title": "Sweet Nothings",
+	"description": "Powerful Whisper and Chat Tool!",
+	"authors": [
+		{
+			"name": "Geekswordsman",
+			"discord": "@Geekswordsman#3085"
+		}
+	],
+	"version": "1.7.0",
+	"compatibility": {
+		"minimum": "10",
+		"verified": "12",
+		"maximum": "12"
+	},
+	"styles": [
+		"styles/sweetNothings.css"
+	],
+	"esmodules": ["module/main.mjs"],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "languages/en.json"
+		},
+		{
+			"lang": "ja",
+			"name": "日本語",
+			"path": "languages/ja.json"
+		}
+	],
+	"url": "https://gitlab.com/geekswordsman/sweetnothings",
+	"manifest": "https://gitlab.com/api/v4/projects/geekswordsman%2Fsweetnothings/packages/generic/release/latest/module.json",
+	"download": "https://gitlab.com/geekswordsman/SweetNothings/-/archive/v1.7.0/sweetnothings-v1.7.0.zip",
+	"license": "https://gitlab.com/geekswordsman/sweetnothings/-/raw/main/LICENSE",
+	"readme": "https://gitlab.com/geekswordsman/sweetnothings/-/raw/main/README.MD",
+	"bugs": "https://gitlab.com/geekswordsman/sweetnothings/-/issues",
+	"changelog": "https://gitlab.com/geekswordsman/SweetNothings/-/raw/1.7.0/CHANGELOG.md"
+}

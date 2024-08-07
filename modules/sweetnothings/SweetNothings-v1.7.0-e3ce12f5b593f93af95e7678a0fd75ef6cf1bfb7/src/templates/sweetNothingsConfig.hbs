@@ -1,0 +1,72 @@
+<form id="sweetNothingsConfigForm" onsubmit="preventDefault()">
+    <h1>{{localize "SWEETNOTHINGS.CONFIGURATION.DEFAULTS.Name"}}</h1>
+    <p>{{localize "SWEETNOTHINGS.CONFIGURATION.DEFAULTS.Hint"}}</p>
+    <hr />
+    {{#each sweetSettings}}
+    <div>
+        <b>{{sweetNothingsLocalizer @key}}</b>
+        <select name="{{@key}}">
+            {{#each choices}}
+            <option value="{{@key}}" {{sweetNothingsSelected @key ../value}}>{{localize @this}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <hr />
+    {{/each}}
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.WHISPER_ROLL_IN_HISTORY"}}</b>
+        <input type="checkbox" name="WhisperRollInHistory" {{#if enableRollInHistory}}checked{{/if}} />
+    </div>
+    <hr />
+    <h1>{{localize "SWEETNOTHINGS.CONFIGURATION.NOTIFICATIONS.Name"}}</h1>
+    <p>{{localize "SWEETNOTHINGS.CONFIGURATION.NOTIFICATIONS.Hint"}}</p>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.WHISPER_TOAST_NOTIFICATION"}}</b>
+        <input type="checkbox" name="WhisperToastNotification" {{#if enableNotification}}checked{{/if}} />
+    </div>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.WHISPER_ROLL_TOAST_NOTIFICATION"}}</b>
+        <input type="checkbox" name="WhisperRollToastNotification" {{#if enableRollToastNotification}}checked{{/if}} {{#unless enableNotification}}disabled readonly{{/unless}} />
+    </div>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.ENABLE_SOUND"}}</b>
+        <input type="checkbox" name="WhisperEnableSound" {{#if enableSound}}checked{{/if}} />
+    </div>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.WHISPER_ROLL_SOUND_NOTIFICATION"}}</b>
+        <input type="checkbox" name="WhisperRollSoundNotification" {{#if enableRollSoundNotification}}checked{{/if}} {{#unless enableSound}}disabled readonly{{/unless}} />
+    </div>
+    <hr />
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.NOTIFICATION_SOUND"}}</b>
+        <span class="sweetNothingsFilePicker">
+            {{#if isV12}}
+                <file-picker style="width:100%;" target="WhisperNotificationSound" type="audio" value="{{notificationSound}}" />
+            {{else}}
+                <input type="text" name="WhisperNotificationSound" value="{{notificationSound}}" />
+                {{filePicker target="WhisperNotificationSound" type="audio"}}
+            {{/if}}
+        </span>
+        <button class="sweetNothingsPlayButton" type="button" data-action="playSound" title="{{localize "SWEETNOTHINGS.TOOLTIPS.SAMPLE_SOUND"}}"><i class="fas fa-play"></i></button>
+    </div>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.NOTIFICATION_VOLUME"}}</b>
+        {{rangePicker name="WhisperNotificationVolume" value=notificationVolume min=0.05 max=1.0 step=0.05}}
+    </div>
+    <hr />
+    <h1>{{localize "SWEETNOTHINGS.CONFIGURATION.EXTERNAL_MODULES.Name"}}</h1>
+    <p>{{localize "SWEETNOTHINGS.CONFIGURATION.EXTERNAL_MODULES.Hint"}}</p>
+    {{#each externalModules}}
+    {{#if enabled}}
+    <h2>{{label}}</h2>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.ENABLE_TOAST"}}</b>
+        <input type="checkbox" name="external_{{id}}_toast" {{#if enableToast}}checked{{/if}} />
+    </div>
+    <div>
+        <b>{{localize "SWEETNOTHINGS.CONFIGURATION.ENABLE_SOUND"}}</b>
+        <input type="checkbox" name="external_{{id}}_audio" {{#if enableAudio}}checked{{/if}} />
+    </div>
+    {{/if}}
+    {{/each}}
+</form>

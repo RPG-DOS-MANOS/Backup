@@ -1,0 +1,23 @@
+{
+  "id": "jaamod",
+  "title": "Jinker's Animated Art Pack",
+  "description": "<p>Collection of Animated Art for use with VTT's in the top-down/overhead perspective. All files are in transparent webm format. Files will be located in your <code>Data/modules/jaamod/AnimatedArt</code> folder.</p><p>If you like my work consider becoming a <a title=\"Jinker's Patreon\" href=\"https://www.patreon.com/jinker\">Patron</a> to ensure I keep creating content for Foundry. <a title=\"jinker.org preview page\" href=\"http://www.jinker.org/patreon/\">Preview Page</a></p>",
+  "authors": [
+    {
+      "name": "Jinker",
+      "discord": "Jinker#8073",
+      "flags": {}
+    }
+  ],
+  "version": "0.91",
+  "compatibility": {
+    "minimum": "0.7.5",
+    "verified": "12"
+  },
+  "esmodules": [
+    "scripts/loadEffects.js"
+  ],
+  "url": "http://www.jinker.org/patreon",
+  "manifest": "https://raw.githubusercontent.com/jinkergm/JAA/master/module.json",
+  "download": "https://github.com/jinkergm/JAA/archive/master.zip"
+}

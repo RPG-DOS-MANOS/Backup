@@ -1,0 +1,242 @@
+#sweetNothingsDialog {
+    .sweetNothingsMessageBox { 
+        height: 300px; 
+        
+        .editor button[title='Save'] { 
+            display: none; 
+        }
+
+        textarea { 
+            height: 300px; 
+        }
+    }
+
+    .editor { 
+        height: 100%; 
+    }
+
+    .tox { 
+        height: 100%; 
+        min-height: 100%; 
+    }
+
+    input[type='checkbox'] { 
+        height: 14px; 
+        margin: 1px 2px; 
+    }
+
+    .sweetNothingsPlayerList {
+        span { 
+            display: inline-block; 
+        }
+    }
+
+    .sweetNothingsChatmodeSelect { 
+        margin-top: 6px; 
+        margin-bottom: 6px;
+    }
+
+    .sweetNothingsBubbles { 
+        padding: 4px; 
+        background-color: white; 
+        border: 1px solid #000; 
+        border-radius: 4px; 
+    }
+} 
+
+#sweetNothingsTargets {
+    option::before { 
+        font-family: FontAwesome; 
+        content: "\f096"; 
+        width: 1.3em; 
+        text-align: center; 
+        display: inline-block; 
+        margin-left: 2px; 
+    }
+
+    option:checked::before { 
+        content: "\f046"; 
+    }
+} 
+
+#sweetNothingsConfigForm {
+    > div { 
+        display: flex; 
+        align-items: center; 
+        justify-content: flex-start; 
+
+        > * { 
+            margin-right: 8px; 
+        }
+    }
+}
+
+.sweetNothingsFilePicker { flex: 1; 
+    display: flex; 
+}
+
+.sweetNothingsPlayButton { 
+    width: 28px; 
+}
+
+.sweetflexrow { 
+    align-content: center; 
+    flex-wrap: wrap; 
+}
+
+.sweetflexcol2 { 
+    flex-grow: 2; 
+}
+
+.sweetflexcol9 { 
+    flex-grow: 9; 
+}
+
+.sweetReply { 
+    margin: 4px; 
+}
+
+/* Remove Save Button From TCE Box */
+#sweetNothingsDialogPanel { 
+    position: absolute; 
+    z-index: -1; 
+
+    > .sweetNothingsDialogToggle { 
+        height: 40px; 
+        width: 20px; 
+        border-top-left-radius: 10px; 
+        border-bottom-left-radius: 10px; 
+        position: absolute; 
+        background: url(/ui/parchment.jpg) repeat; 
+        color: #000; 
+        line-height: 41px; 
+        font-size: 23px; 
+        border: 1px solid #666; 
+        border-right: none; 
+    }
+
+    img.sweetNothingsLoading { 
+        border: none; 
+        width: 21px; 
+        display: none; 
+    }
+
+    .sweetNothingsLoading.sweetNothingsIsLoading { 
+        display: inline-block; 
+        animation-name: fading; animation-duration: 1.5s; 
+        animation-iteration-count: infinite; 
+    }
+}
+
+#sweetNothingsDialogPanel.collapsed { 
+    left: -20px; 
+    top: 45%; 
+
+    .sweetNothingsDialogToggle {
+        > .collapseIcon { 
+            display: none; 
+        }
+    }
+
+    > .sweetNothingsHistory { 
+        display: none; 
+    }
+}
+
+#sweetNothingsDialogPanel.opened {
+    left: -300px; 
+    width: 300px; 
+    height: 454px; 
+    top: 0px; 
+    margin-top: 29px;
+
+    > .sweetNothingsDialogToggle {
+        left: -19px; 
+        top: calc(50% - 40px);
+
+        > .expandIcon { 
+            display: none; 
+        }
+    }
+}
+
+#sweetNothingsDialogPanel.collapsed.animate { 
+    animation-name: closing; 
+    animation-duration: 0.15s; 
+}
+
+#sweetNothingsDialogPanel.opened.animate { 
+    animation-name: opening; 
+    animation-duration: 0.5s; 
+}
+
+.sweetNothingsHistory { 
+    background: url(/ui/parchment.jpg) repeat; 
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px; 
+    border: 1px solid #666; 
+    height: 454px; 
+    padding-left: 5px; 
+    padding-right: 5px; 
+    color: #000; 
+
+    > h3 { 
+        padding: 4px 0px 0px 5px; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+    }
+
+    > ul { 
+        padding: 0px; 
+        height: 405px; 
+        overflow-y: scroll; 
+    }
+}
+
+/* Force Color to override issues with systems like wfrp 
+#sweetNothingsDialog.app.window-app.form .tox.tox-tinymce input {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsDialog.app.window-app.form .tox.tox-tinymce button {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsDialog.app.window-app.form .tox.tox-tinymce .tox-edit-area {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsDialog.app.window-app.form .tox.tox-tinymce .tox-editor-header * {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsDialog.app.window-app.form .tox.tox-tinymce .tox-editor-header path {
+    fill: var(--color-text-light-1);
+}
+#sweetNothingsDialog.app.window-app.form .tox.tox-tinymce .tox-edit-area > iframe > html {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsConfig.app.window-app.form .window-content #sweetNothingsConfigForm input {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsConfig.app.window-app.form .window-content #sweetNothingsConfigForm button {
+    color: var(--color-text-light-1);
+}
+#sweetNothingsConfig.app.window-app.form .window-content #sweetNothingsConfigForm select {
+    color: var(--color-text-light-1);
+}
+*/
+
+/* Panel Animations */
+@keyframes opening {
+    from { left: -20px; }
+    to { left: -300px; }
+}
+
+@keyframes closing {
+    from { left: -300px; }
+    to { left: -20px; }
+}
+
+@keyframes fading {
+    from { opacity: 0;}
+    50% { opacity: 255; }
+    to { opacity: 0;}
+}

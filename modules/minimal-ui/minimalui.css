@@ -1,0 +1,375 @@
+:root {
+    --logovis: hidden;
+}
+
+#logo {
+    visibility: var(--logovis);
+}
+:root {
+    --controlsw: 36px;
+    --controlsh: 30px;
+    --controlslh: 30px;
+    --controlsfs: 24px;
+    --controlstop: 75px;
+    --opacitycontrols: 75%;
+    --controlssubop: 100%;
+    --controlssubopna: 100%;
+    --controlssubdisna: block;
+}
+
+#ui-left {
+    left: -5px;
+}
+
+#controls {
+    opacity: var(--opacitycontrols);
+    transition: 2s;
+    margin-top: var(--controlstop);
+}
+
+#controls:hover {
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+#controls ol.main-controls {
+    overflow: visible;
+    margin-top: calc(var(--shadowstrength) + 1px);
+}
+
+#controls > ol.main-controls > li.scene-control, #controls > ol.sub-controls > li {
+    width: var(--controlsw);
+    height: var(--controlsh);
+    line-height: var(--controlslh);
+    font-size: var(--controlsfs);
+    border: 1px solid transparent;
+}
+
+#controls ol .scene-control:not(.active), #controls ol .control-tool:not(.active) {
+    transition: 2s;
+    opacity: var(--controlssubopna);
+    display: var(--controlssubdisna);
+}
+
+#controls:hover ol .scene-control:not(.active), #controls:hover ol .control-tool:not(.active) {
+    transition: 0.5s;
+    opacity: 100%;
+}
+
+#controls ol.control-tools > li.active, #controls ol.control-tools > li:hover {
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+}
+
+#controls ol.sub-controls.active {
+    opacity: var(--controlssubop);
+    margin-top: calc(var(--shadowstrength) + 1px);
+    transition: 2s;
+}
+
+#controls:hover ol.sub-controls.active {
+    transition: 0.5s;
+    margin-top: calc(var(--shadowstrength) + 1px);
+    opacity: 100%;
+}
+:root {
+    --playervis: hidden;
+    --playerfsize: 0px;
+    --playerfsizehv: 12px;
+    --playerwidthhv: 150px;
+    --playerslh: 20px;
+    --playerbennies: none;
+    --playerh3w: unset;
+    --playerbot: 5px;
+    --playerpingdisplay: initial;
+}
+
+#players {
+    margin-bottom: var(--playerbot);
+    font-size: var(--playerfsize);
+    visibility: var(--playervis);
+    opacity: var(--opacity);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+}
+
+#players:hover {
+    opacity: 100%;
+}
+
+#players ol li.player {
+    padding: 1px 10px;
+    line-height: var(--playerslh);
+}
+
+#players h3 {
+    margin: 1px;
+    padding-left: 2px;
+}
+
+#players #context-menu {
+    font-size: 14px;
+}
+
+.raised-hand {
+    font-size: 20px;
+    position: fixed;
+}
+
+.pingLogger_pingSpan {
+    display: var(--playerpingdisplay);
+}
+
+.bennies-count {
+    display: var(--playerbennies);
+}
+
+#destiny-tracker {
+    opacity: var(--opacity);
+}
+
+#destiny-tracker:hover {
+    opacity: 100%;
+}
+:root {
+    --controlsvis: hidden;
+    --fpsvis: hidden;
+}
+
+#sidebar {
+    visibility: var(--controlsvis);
+}
+
+#sidebar.collapsed {
+    transition: 0.5s;
+    opacity: var(--opacity);
+}
+
+#sidebar.collapsed:hover {
+    transition: 0.5s;
+    opacity: 100%;
+}
+
+#sidebar-tabs {
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+#sidebar-tabs > .item.active {
+    box-shadow: 0 0 var(--shadowstrength) inset var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+}
+
+#sidebar.collapsed #sidebar-tabs > .item.active {
+    border-bottom: 1px solid var(--bordercolor);
+}
+
+.tabs .item.active {
+    text-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+}
+
+#sidebar-tabs > a:nth-child(n):hover {
+    text-shadow: 0 0 var(--shadowstrength) var(--bordercolor);
+}
+
+#fps {
+    position: absolute;
+    right: var(--fpsposx);
+    visibility: var(--fpsvis);
+}
+:root {
+    --bordercolor: #00000080;
+    --shadowcolor: #7c7c7c40;
+    --shadowstrength: 10px;
+    --opacity: 75%;
+    --fpsposx: 0;
+}
+
+div#camera-views.camera-position-left, div#camera-views.camera-position-right {
+    min-width: 130px;
+    --av-width: auto;
+}
+:root {
+    --hotbarvis: visible;
+    --hotbarypos: -5px;
+    --hotbarxpos: 510px;
+    --hotbarlh1: 24px;
+    --hotbarlh2: 8px;
+    --hotbarhv: var(--hotbarypos);
+    --hotbarmg: 0px;
+    --hotbarhh: 100%;
+    --hotbarshp: 0px;
+}
+
+#hotbar:hover {
+    bottom: var(--hotbarhv);
+    transition: 0.5s;
+    opacity: 100%;
+}
+
+#hotbar {
+    left: var(--hotbarxpos);
+    bottom: var(--hotbarypos);
+    visibility: var(--hotbarvis);
+    transition: 0.5s ease-out 0.5s;
+    opacity: var(--opacity);
+    position: fixed;
+}
+
+#hotbar .bar-controls {
+    background: url(../../ui/denim075.png) repeat;
+    height: var(--hotbarhh);
+    margin: var(--hotbarmg) 2px;
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+    border-radius: 5px;
+}
+
+#hotbar .bar-controls a.page-control {
+    font-size: 20px;
+}
+
+#hotbar #hotbar-directory-controls {
+    font-size: 14px;
+}
+
+#hotbar .bar-controls span.page-number {
+    line-height: var(--hotbarlh2);
+}
+
+#hotbar #macro-list:hover {
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    transition: 0.5s;
+}
+
+#hotbar #macro-list {
+    border: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    transition: 0.05s ease-out 0.5s;
+}
+
+#hotbar.locked #macro-list:hover {
+    border: 1px solid var(--shadowcolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--bordercolor);
+    transition: 0.5s;
+}
+
+#hotbar.locked #macro-list {
+    border: 1px solid var(--shadowcolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--bordercolor);
+    transition: 0.05s ease-out 0.5s;
+}
+
+#hotbar .macro:hover {
+    box-shadow: 0 0 10px var(--shadowcolor) inset;
+}
+
+#hotbar #hotbar-directory-controls a {
+    line-height: var(--hotbarlh1);
+}
+
+#hotbar-page-controls, #hotbar-directory-controls {
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    border: 1px solid var(--bordercolor);
+    border-radius: 5px;
+}
+:root {
+    --navivis: hidden;
+    --navixpos: 110px;
+    --navixmg: 75px;
+    --navilh: 20px;
+    --navifs: 14px;
+    --navilisttop: 16px;
+    --navibuttonsize: 23px;
+    --navileft: -10px;
+    --naviright: 0px;
+    --topleft: -200px;
+}
+
+#ui-top.offset {
+    margin-left: var(--topleft);
+}
+
+#navigation {
+    padding-left: var(--navixpos);
+    visibility: var(--navivis);
+    opacity: var(--opacity);
+    transition: 0.5s ease-out 0.5s;
+    margin: 5px 0 0 0;
+}
+
+#navigation:hover {
+    opacity: 100%;
+    transition: 0.5s;
+}
+
+#navigation .nav-item {
+    line-height: var(--navilh);
+    font-size: var(--navifs);
+    top: 5px;
+}
+
+#navigation #nav-toggle {
+    height: var(--navibuttonsize);
+    background: #292929bd;
+    border: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 var(--hotbarshp) var(--shadowstrength) 2px var(--shadowcolor);
+    left: var(--navileft);
+    margin-right: var(--naviright);
+    top: 5px;
+}
+
+#navigation #scene-list {
+    margin-right: var(--navixmg);
+}
+
+#navigation #scene-list .scene ul.scene-players {
+    top: var(--navilisttop);
+}
+
+#navigation #scene-list .scene.view, #navigation #scene-list .scene.context {
+    border: 1px solid var(--bordercolor);
+    border-bottom: 1px solid var(--bordercolor);
+    box-shadow: 0 0 var(--shadowstrength) var(--shadowcolor);
+    top: 5px;
+}
+
+/** COMPATIBILITY: Monks Scene Navigation */
+
+#navigation .monks-scene-navigation {
+    flex: 0 0 var(--navilh);
+    height: var(--navilh);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item {
+    height: var(--navilh);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item a {
+    line-height: var(--navilh);
+    height: var(--navilh);
+    font-size: var(--navifs);
+    padding: 0 4px;
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item ul.scene-players {
+    top: var(--navilisttop);
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder a {
+    padding-top: 0;
+    border-top: 1px;
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder.expanded a {
+    height: calc(var(--navilh) + 2px);
+    margin-top: 4px;
+}
+
+#navigation .monks-scene-navigation .scene-list > li.nav-item.folder-header {
+    line-height: var(--navilh);
+}
+
+/** --------------- */

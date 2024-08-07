@@ -1,0 +1,27 @@
+{
+    "id": "pt-BR",
+    "title": "Brazilian Portuguese [Core] - Tradução PT-BR",
+    "description": "Este módulo traduz a interface principal do FoundryVTT para Português Brasileiro (pt-BR).",
+    "authors": [
+        {
+            "name": "Matheus Clemente",
+            "discord": "mclemente"
+        }
+    ],
+    "compatibility": {
+        "minimum": "11",
+        "verified": "11.315"
+    },
+    "coreTranslation": true,
+    "languages": [
+        {
+            "lang": "pt-BR",
+            "name": "Português (Brasil)",
+            "path": "lang/pt-BR.json"
+        }
+    ],
+    "url": "https://github.com/mclemente/fvtt-ptbr-core-translation",
+    "version": "v11.315.7",
+    "manifest": "https://github.com/mclemente/fvtt-ptbr-core-translation/releases/latest/download/module.json",
+    "download": "https://github.com/mclemente/fvtt-ptbr-core-translation/releases/download/v11.315.7/module.zip"
+}

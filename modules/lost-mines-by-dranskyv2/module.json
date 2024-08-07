@@ -1,0 +1,45 @@
+{
+  "id": "lost-mines-by-dranskyv2",
+  "title": "Lost Mines by dransky v2",
+  "version": "2.1.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11"
+  },
+  "relationships": {
+    "requires": [
+      {
+        "id": "monks-active-tiles",
+        "type": "module",
+        "manifest": "https://github.com/ironmonk88/monks-active-tiles/releases/latest/download/module.json",
+        "compatibility": {}
+      }
+    ]
+  },
+  "description": "A set of animated battlemaps and illustrations created for the most iconic dnd adventure. V2 has optimized animated maps which give the players smooth gaming experience.",
+  "authors": [
+    {
+      "name": "dransky",
+      "discord": "https://discord.gg/VyC2jsvEBb",
+      "url": "https://dranskybattlemaps.com/",
+      "flags": {}
+    }
+  ],
+  "url": "https://dranskybattlemaps.com/",
+  "download": "https://www.dropbox.com/scl/fi/4dcrwwqgi83sy5xkyjol6/lost-mines-by-dranskyv2.zip?rlkey=kpazey4qkjfzmcg8bzxid60v6&dl=1",
+  "manifest":"https://www.dropbox.com/scl/fi/dp8krbyvhk81lc510ma77/module.json?rlkey=knku2uk5nnywsvkgkflljmsa1&dl=1",
+  "packs": [
+    {
+      "name": "lost-mines-maps",
+      "label": "Lost Mines by dransky",
+      "path": "packs/lost-mines-maps",
+      "type": "Adventure",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
+      "flags": {}
+    }
+  ]
+}

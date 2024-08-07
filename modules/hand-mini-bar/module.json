@@ -1,0 +1,49 @@
+{
+  "title": "Card Hand Mini Toolbar",
+  "description": "A module to display a players hand of cards on the screen in a small toolbar",
+  "version": "1.6.2",
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json",
+      "flags": {}
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json",
+      "flags": {}
+    },
+    {
+      "lang": "ja",
+      "name": "日本語",
+      "path": "lang/ja.json",
+      "flags": {}
+    }
+  ],
+  "authors": [
+    {
+      "name": "Pengrath",
+      "email": "pengrath@gmail.com",
+      "discord": "pengrath#6083",
+      "url": "https://gitlab.com/pengrath",
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "scripts/hand-mini-bar-module.js"
+  ],
+  "styles": [
+    "styles/hand-mini-bar.css"
+  ],
+  "socket": true,
+  "url": "https://gitlab.com/pengrath/hand-mini-bar",
+  "manifest": "https://gitlab.com/pengrath/hand-mini-bar/-/raw/main/module.json",
+  "download": "https://foundry.pengrath.com/hand-mini-bar-v1.6.2.zip",
+  "id": "hand-mini-bar",
+  "compatibility": {
+    "minimum": "9",
+    "verified": "12"
+  }
+}

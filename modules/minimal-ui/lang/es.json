@@ -1,0 +1,83 @@
+{
+  "I18N.LANGUAGE": "Español",
+  "I18N.MAINTAINERS": "@Viriato139ac#0342",
+
+  "MinimalUI.SettingsAlwaysVisible": "Siempre visible",
+  "MinimalUI.SettingsStartVisible": "Iniciar Visible",
+  "MinimalUI.SettingsPartiallyVisible": "Parcialmente Visible",
+  "MinimalUI.SettingsAutoHide": "Auto-ocultar",
+  "MinimalUI.SettingsAutoHidePlus": "Auto-ocultar Plus",
+  "MinimalUI.SettingsClickToggle": "Alternan con Click",
+  "MinimalUI.SettingsCollapsed": "Iniciar plegado",
+  "MinimalUI.SettingsOnlyGM": "Visible solo al DM",
+  "MinimalUI.SettingsHide": "Ocultar por completo",
+
+  "MinimalUI.SettingsSmall": "Pequeño",
+  "MinimalUI.SettingsDefault": "Por defecto",
+  "MinimalUI.SettingsStandard": "Estándar",
+  "MinimalUI.SettingsBig": "Grande",
+
+  "MinimalUI.Enabled": "Activado",
+  "MinimalUI.Disabled": "Desactivado",
+
+  "MinimalUI.LogoStyleName": "Visibilidad del logo de Foundry",
+  "MinimalUI.LogoStyleHint": "Tamaño y visibilidad del logo de Foundry",
+  "MinimalUI.LogoBehaviourName": "Comportamiento del logo de Foundry",
+  "MinimalUI.LogoBehaviourHint": "Usar el logo de Foundry para conmutar elementos visuales (cuando esté activo).",
+  "MinimalUI.LogoBehaviourToggle": "Clickear el logo oculta toda la UI",
+  "MinimalUI.LogoBehaviourToggleNoChat": "Clickear el logo oculta toda la UI excepto el chat",
+  "MinimalUI.LogoImageName": "Imagen del logo de Foundry",
+  "MinimalUI.LogoImageHint": "La imagen debe tener un tamaño de 100x50 píxeles",
+
+  "MinimalUI.ControlsSizeName": "Tamaño de controles de la izquierda",
+  "MinimalUI.ControlsSizeHint": "Mostrar el tamaño del panel lateral",
+  "MinimalUI.ControlsSubHideName": "Estilo de botones secundarios de controles de la izquierda",
+  "MinimalUI.ControlsSubHideHint": "Solo muestra los botones de la segunda columna al pasar el mouse",
+
+  "MinimalUI.HotbarStyleName": "Barra de macros",
+  "MinimalUI.HotbarStyleHint": "Personaliza la UI de la barra de accesos directos. Se ignorará el auto-ocultar cuando se use el módulo 'Custom Hotbar'",
+  "MinimalUI.HotbarPositionName": "Posición de la barra de macros",
+  "MinimalUI.HotbarPositionHint": "Posición horizontal de la barra de macros",
+  "MinimalUI.HotbarPositionMaxLeft": "A la izquierda (Por defecto en Foundry)",
+  "MinimalUI.HotbarPositionExtremeLeft": "Extremo a la izquierda",
+  "MinimalUI.HotbarPositionCenterLeft": "Centrado a la izquierda",
+  "MinimalUI.HotbarPositionCenter": "Centrado",
+  "MinimalUI.HotbarPositionCenterRight": "Centrado a la derecha",
+  "MinimalUI.HotbarPositionManual": "Manual",
+  "MinimalUI.HotbarPPositionName": "Posición manual en píxeles de la barra de macros",
+  "MinimalUI.HotbarPPositionHint": "Posición horizontal en píxeles. Si posición de la barra de macros se pone en 'Manual'",
+
+  "MinimalUI.NavigationStyleName": "Estilo de la navegación de escenas",
+  "MinimalUI.NavigationStyleHint": "Personaliza el comportamiento de la navegación de escenas. Tiene en cuenta 'DF Scene Enhancement' cuando se oculta",
+  "MinimalUI.NavigationSizeName": "Tamaño de la navegación de escenas",
+  "MinimalUI.NavigationSizeHint": "Personaliza el tamaño de la navegación de escenas, cuando sea visible",
+
+  "MinimalUI.PlayersBehaviourName": "Estilo de Lista de jugadores",
+  "MinimalUI.PlayersBehaviourHint": "Personalizar UI para la lista de jugadores",
+  "MinimalUI.PlayersSizeName": "Tamaño de Lista de Jugadores",
+  "MinimalUI.PlayersSizeHint": "Elige entre tamaño pequeño o el estándar de Foundry",
+
+  "MinimalUI.PlayersShowPingName" : "Comportamiento de User Latency con Minimal UI",
+  "MinimalUI.PlayersShowPingHint" : "Mostrar el Ping independientemente de si la lista de jugadores se auto-esconde",
+  "MinimalUI.PlayersShowPing"  : "Mostrar",
+  "MinimalUI.PlayersHidePing"  : "Esconder",
+
+  "MinimalUI.SidebarStyleName": "Comportamiento del panel lateral derecho",
+  "MinimalUI.SidebarStyleHint": "Si se debe colapsar o no el panel lateral derecho",
+
+  "MinimalUI.BorderColorName": "Colores del borde",
+  "MinimalUI.BorderColorHint": "Color de los bordes de paneles y botones",
+  "MinimalUI.ShadowColorName": "Color sombreado",
+  "MinimalUI.ShadowColorHint": "Color de las sombras al rededor de paneles y botones",
+  "MinimalUI.ShadowStrengthName": "Fuerza sombreado",
+  "MinimalUI.ShadowStrengthHint": "Grado de sombreado y oscuridad de los bordes. Por defecto: 5",
+  "MinimalUI.TransparencyPercentageName": "Porcentaje de Opacidad",
+  "MinimalUI.TransparencyPercentageHint": "Grado de opacidad de los components previo al paso del raton? Por defecto: 75",
+  "MinimalUI.ColorPicker": "Escoger color",
+
+  "MinimalUI.NoCameraBehaviorName": "Comportamiento de Camaras apagadas",
+  "MinimalUI.NoCameraBehaviorHint": "¿Qué hacer con los jugadores con las cámaras apagadas? Nota: El mod oculto no permite activar y desactivar la cámara. Una vez desactivada, no podrás volver a activar la cámara a menos que cambies a un modo diferente. Utiliza el modo predeterminado o reducido para alternar.",
+  "MinimalUI.NoCameraBehaviorReduced": "Reducido",
+  "MinimalUI.NoCameraBehaviorHidden": "Oculto"
+
+}

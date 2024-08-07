@@ -1,0 +1,48 @@
+{
+    "name": "sweetnothings",
+    "displayName": "sweetNothings",
+    "version": "1.7.0",
+    "private": "true",
+    "type": "module",
+    "scripts": {
+        "build": "gulp",
+        "clean": "gulp clean",
+        "deploy": "gulp deploy",
+        "publish": "gulp publish",
+        "foundry": "gulp foundry"
+    },
+    "dependencies": {
+        "gulp": "^5.0.0",
+        "clean-css": "^5.3.3",
+        "fs-extra": "^11.2.0",
+        "del": "^7.1.0",
+        "merge2": "^1.4.1",
+        "json-stringify-pretty-compact": "^4.0.0",
+        "gulp-git": "^2.10.1",
+        "gulp-less": "^5.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-clean-css": "^4.3.0",
+        "geekdialog": "git+https://gitlab.com/geekswordsman/geekdialog.git"
+    },
+    "license": "SEE LICENSE IN ./LICENSE",
+    "homepage": "https://gitlab.com/geekswordsman/SweetNothings",
+    "repository": {
+        "type": "git",
+        "url": "git+https://gitlab.com/geekswordsman/SweetNothings.git"
+    },
+    "bugs": {
+        "url": "https://gitlab.com/geekswordsman/SweetNothings/-/issues"
+    },
+    "contributors": [
+        {
+            "name": "Geekswordsman",
+            "email": "geekswordsman@gmail.com"
+        }
+    ],
+    "description": "Utilizing handy keybindings that bring up a simple yet powerful dialog option to make whispering and chat messages flexible!",
+    "main": "src/module/main.mjs",
+    "author": "Geekswordsman",
+    "devDependencies": {
+        "gulp-sass": "^5.1.0"
+    }
+}

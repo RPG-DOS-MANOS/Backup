@@ -1,0 +1,57 @@
+{
+    "id": "scenery",
+    "title": "Scenery - Background Image Variation Manager",
+    "description": "Allows easy import and background image changes for variations such as GM/Player, Night, Seasonal, etc.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Straube",
+            "email": "email@marcstraube.de",
+            "discord": "durag-c-walker#8327",
+            "url": "https://github.com/marcstraube"
+        },
+        {
+            "name": "Vance Cole"
+        }
+    ],
+    "version": "1.1.3",
+    "library": "false",
+    "compatibility": {
+        "minimum": "10",
+        "verified": "11",
+        "maximum": "11"
+    },
+    "esmodules": [
+        "./scripts/scenery.js"
+    ],
+    "styles": [
+        "./styles/scenery.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        },
+        {
+            "lang": "de",
+            "name": "Deutsch",
+            "path": "languages/de.json"
+        },
+        {
+            "lang": "es",
+            "name": "Español",
+            "path": "languages/es.json"
+        }
+    ],
+    "relationships": {},
+    "url": "https://github.com/marcstraube/foundryvtt-scenery",
+    "manifest": "https://github.com/marcstraube/foundryvtt-scenery/releases/latest/download/module.json",
+    "download": "https://github.com/marcstraube/foundryvtt-scenery/releases/download/1.1.3/module.zip",
+    "bugs": "https://github.com/marcstraube/foundryvtt-scenery/issues",
+    "changelog": "https://github.com/marcstraube/foundryvtt-scenery/releases",
+    "readme": "https://github.com/marcstraube/foundryvtt-scenery/blob/master/README.md",
+    "flags": {
+        "allowBugReporter": true
+    }
+}

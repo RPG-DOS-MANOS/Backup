@@ -1,0 +1,26 @@
+@import url('css-partials/swade-cyber-root.css');
+@import url('css-partials/swade-cyber-common.css');
+@import url('css-partials/swade-cyber-items.css');
+@import url('css-partials/swade-cyber-npc.css');
+@import url('css-partials/swade-cyber-pc.css');
+
+
+/*********************************
+  *
+  *     If you're here you know
+  *     what do to with these :)
+  *     Branding & longer PC name
+  *
+  *********************************/
+
+/* 
+figure.gridcell.branding {
+    display: none;
+}
+
+.swade-official .charname-container input[type] {
+    background: transparent;
+    min-width: 490px;
+}
+ */
+
